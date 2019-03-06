@@ -1,5 +1,4 @@
 # Python Built-in Function
-
 # The Python interpreter has a number of functions that are always available for use. These functions are called built-in functions. For example, print() function prints the given object to the standard output device (screen) or to the text stream file.
 
 # In Python 3.6 (latest version), there are 68 built-in functions. They are listed below alphabetically along with brief description.

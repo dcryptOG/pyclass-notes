@@ -1,6 +1,5 @@
 # LIST COMPREHENSIONS
 print('List Comprehensions - append is read as default\n')
-
 print("mylist = []\nmystring = 'hello'\nfor letter in mystring:\n    mylist.append(letter)")
 mylist = []
 mystring = 'hello'

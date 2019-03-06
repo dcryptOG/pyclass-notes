@@ -1,5 +1,10 @@
 
 # Methods
+# ?
+# *
+# TODO
+# !asdf
+
 
 # Methods are essentially functions built into objects.
 # Later create our own objects and methods using Object Oriented Programming (OOP) and classes.
@@ -14,7 +19,7 @@
 
 # # Create a simple list
 lst = [1, 2, 3, 4, 5]
-
+lst.reverse()
 # The methods for a list are:
 
 #     append

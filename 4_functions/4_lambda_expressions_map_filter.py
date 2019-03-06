@@ -21,6 +21,7 @@
 # Here is an example of lambda function that doubles the input value.
 
 # Program to show the use of lambda functions
+# ?
 
 
 def double(x): return x * 2
