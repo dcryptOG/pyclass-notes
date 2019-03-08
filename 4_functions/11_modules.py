@@ -225,3 +225,5 @@ print(random.random())
 # vonmisesvariate(mu, kappa) 	Vonmises distribution
 # paretovariate(alpha) 	Pareto distribution
 # weibullvariate(alpha, beta) 	Weibull distribution
+
+#! SECRETS MODULE IS USED FOR GENERATING CRYPTOGRAPHICALLY STRONG RANDOM NUMBERS

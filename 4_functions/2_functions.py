@@ -6,26 +6,24 @@
 
 # 2 two types:
 
-#     Built-in functions - Functions that are built into Python.
-#     User-defined functions - Functions defined by the users themselves.
+#     * Built-in functions - Functions that are built into Python.
+#     * User-defined functions - Functions defined by the users themselves.
 
 # So what is a function?
 
-# In Python, function is a set of related statements that perform a specific task, reducing repetitive code.
+# ! FUNCTION =  is a SET of related STATEMENTS that PERFORM a specific TASK, reducing repetitive code.
 
 # They can also let us specify parameters that can serve as inputs to the functions.
 
-# Furthermore, it avoids repetition and makes code reusable.
-
 # Above shown is a function definition which consists of following components.
 
-#     Keyword def marks the start of function header.
+#     ? Keyword DEF marks the start of function header.
 #     A function name to uniquely identify it. Function naming follows the same rules of writing identifiers in Python.
-#     PARAMETERS (ARGUMENTS) through which we pass values to a function. OPTIONAL.
-#     Arguments can be used in a function and referenced within the function
-#     A COLON (:) @ end of function header.
-#     Optional documentation string (docstring) to describe what the function does.
-#     One or more valid python statements that make up the function body.
+#     ? PARAMETERS (ARGUMENTS) through which we pass values to a function. OPTIONAL.
+#     ! ARGUMENTS can be used in a function and referenced within the function
+#     ! A COLON (:) @ end of function header.
+#    ?  Optional DOCUMENTATION STRING (DOCSTRING) to describe what the function does.
+#     *FUNCTION BODY = one or more statements
 #     Statements must have same indentation level (usually 4 spaces).
 #     An optional return statement to return a value from the function.
 
@@ -70,7 +68,7 @@ greet('Paul')
 
 # Try running the following into the Python shell to see the output.
 print('\nprint(greet.__doc__)')
-print(greet.__doc__)
+print("output:", greet.__doc__)
 # OUTPUT
 # This function greets to
 # 	the person passed into the
@@ -83,16 +81,12 @@ print("\nRETURN STATEMENT\n")
 
 # Syntax of return
 
-# return [expression_list]
+#! return [expression_list]
 
 print('\nreturn [expression_list]')
 
-# If there is NO EXPRESSION in the statement
-# OR the NO RETURN STATEMENT inside a function,
-#  THEN the function will return the None object.
-
-
-# Next you'll see the docstring, this is where you write a basic description of the function.
+# If there is NO EXPRESSION in the statement OR the NO RETURN STATEMENT inside a function,
+#  ? THEN the function will return the NONE object.
 
 # Example 1: A simple print 'hello' function
 print('EX2\ndef say_hello():\n    print("hello")')
@@ -115,13 +109,12 @@ say_hello()
 print("\nEX3\ndef greeting(name):\n    print('Hello %s' % (name))")
 
 
-def greeting(name):
+def greeting(name='NAME'):
     print('Hello %s' % (name))
 
 
 greeting('Jose')
-
-# Hello Jose
+greeting()
 
 # Using return
 
@@ -138,15 +131,51 @@ add_num(4, 5)
 
 # # Can also save as variable due to return
 result = add_num(4, 5)
-
 print(result)
 
 # What happens if we input two strings?
+one = 'Ayya'
+two = ' playa'
+
+result = add_num(one, two)
+
+print(result)
 
 
-add_num('one', 'two')
+# def dog_check(mystring):
+#     if 'dog' in mystring:
+#         return True
+#     else:
+#         return False
 
 
+def dog_check(mystring):
+    return 'dog' in mystring.lower()
+
+
+print(dog_check('My dog ran away'))
+
+
+# * in statement already Boolean to check
+# also check with this
+print('Dog' in 'Dog ran away')
+
+# ? PIG LATAIN EX
+# If a word starts witha  vowel, add 'ay' to end
+# If word doesn't start w avoewl, put first letter at the end, then add 'ay'
+
+
+def pig_latin(word):
+    first_letter = word[0]
+# check if vowel
+    if first_letter in 'aeiou':
+        pig_word = word + 'ay'
+    else:
+        pig_word = word[1:] + first_letter + 'ay'
+    return pig_word
+
+
+print(pig_latin('hello'))
 # 'onetwo'
 
 # Note that because we don't declare variable types in Python, this function could be used to add numbers or sequences together!
