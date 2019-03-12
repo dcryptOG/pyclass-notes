@@ -262,43 +262,8 @@ print(func1(10, 20, 30, fruit='orange', food='pizzas', animal='dog'))
 
 # As with "args", you can use any name you'd like for keyworded arguments - "kwargs" is just a popular convention.
 
-
-#! Function return every other letter capitalize string
-
-def foo(s):
-    ret = ""
-    i = True  # capitalize
-    # ! i = True EQUIV i = 1
-    # i = 1
-    for char in s:
-        if i:
-            ret += char.lower()
-        else:
-            ret += char.upper()
-        if char != ' ':
-            i = not i
-    return ret
-
-
-def myfunc10(x):
-    ret = ""
-    i = 0
-    for c in x:
-        if(i % 2 == 0):
-            ret += c.lower()
-        else:
-            ret += c.upper()
-        i += 1
-    return ret
-
-
-x = "seMi Long StRing WiTH COMPLetely RaNDOM CasINg"
-print(myfunc10(x))
-
-print(foo('gkvkafdsgjg'))
-
-
 # ! RETURN ONLY EVENS
+
 
 def func4(*args):
     evens = []

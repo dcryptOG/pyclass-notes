@@ -110,8 +110,7 @@ print(caps(st))
 def yoda(sen):
     words = sen.split()
     words.insert(0, words.pop())
-    return words
-
+    return ' '.join(words)
 # ! better returns string
 
 
@@ -119,9 +118,9 @@ def master_yoda(text):
     return ' '.join(text.split()[::-1])
 
 
-print(master_yoda('I am home'))
-# >>> "--".join(['a','b','c'])
-# >>> 'a--b--c'
+print(yoda('I am home'))
+# >>> "_0_".join(['a','b','c'])
+# >>> 'a_0_b_0_c'
 
 # This means if you had a list of words you wanted to turn back into a sentence, you could just join them with a single space string:
 
@@ -370,6 +369,7 @@ print(spy_game([1, 0, 2, 4, 0, 5, 7]))
 
 #         for y in range(3, x, 2):  # test all odd factors up to x-1
 
+#! faster version
 def count_primes2(num):
     primes = [2]
     x = 3
@@ -387,8 +387,8 @@ def count_primes2(num):
     return len(primes)
 
 
-lower = 900
-upper = 1000
+lower = 1
+upper = 10
 # ! Prime is a number that is only divisible by 1 and ITSELF
 # * in terms of whole numbers
 # uncomment the following lines to take input from the user
@@ -427,3 +427,41 @@ print(check_prime(9))
 
 
 ################
+
+
+#! Function return every other letter capitalize string
+
+def foo(s):
+    ret = ""
+    i = True  # capitalize
+    # ! i = True EQUIV i = 1
+    # i = 1
+    for char in s:
+        if i:
+            ret += char.lower()
+        else:
+            ret += char.upper()
+        if char != ' ':
+            i = not i
+    return ret
+
+
+def myfunc10(str):
+    ret = ""
+    i = 0
+    for c in str:
+        if(i % 2 == 0):
+            ret += c.lower()
+        else:
+            ret += c.upper()
+        i += 1
+    return ret
+
+
+x = "seMi Long StRing WiTH COMPLetely RaNDOM CasINg"
+print(myfunc10(x))
+
+print(foo('gkvkafdsgjg'))
+
+x = x.split()
+print(x)
