@@ -6,7 +6,7 @@
 
 
 def even_odds(a, b):
-    if a and b % 2 == 0:
+    if a % 2 == 0 and b % 2 == 0:
         return min(a, b)
     else:
         return max(a, b)
@@ -17,13 +17,6 @@ print(even_odds(3, 9))
 
 # ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter
 
-def str_len(mystring):
-    if len(mystring) == 2 and mystring[0].lower() == mystring[1].lower():
-        return True
-
-
-print(str_len('aA'))
-
 test_string = 'Hello you'
 
 
@@ -31,6 +24,8 @@ def str_two(st):
     words = st.split()
     if words[0][0].lower() == words[1][0].lower():
         return True
+    else:
+        return False
 
 
 print('What', str_two('fuck Fuck'))
@@ -41,7 +36,7 @@ def animal_crackers(text):
     return wordlist[0][0] == wordlist[1][0]
 
 
-print(animal_crackers('Fuck Fuck'))
+print(animal_crackers('fuck Fuck'))
 # animal_crackers('Levelheaded Llama') --> True
 # animal_crackers('Crazy Kangaroo') --> False
 
@@ -56,10 +51,14 @@ print(animal_crackers('Fuck Fuck'))
 
 
 def add(x1, x2):
-    if x1 + + x2 == 20 or x1 == 20 or x2 == 20:
+    if (x1 + x2) == 20 or x1 == 20 or x2 == 20:
         return True
     else:
         return False
+
+
+def makes_twenty(n1, n2):
+    return (n1+n2) == 20 or n1 == 20 or n2 == 20
 
 
 print(add(10, 20))
@@ -83,32 +82,44 @@ st = 'helloyou'
 def caps(st):
     if len(st) > 3:
         return st[:3].capitalize() + st[3:].capitalize()
+    else:
+        return 'String too short'
 
 
 print(caps(st))
 
 
 # ! MASTER YODA: Given a sentence, return a sentence with the words reversed
-
+# todo FINISH DIS ONE NOW
 # master_yoda('I am home') --> 'home am I'
 # master_yoda('We are ready') --> 'ready are We'
 
 # Note: The .join() method may be useful here. The .join() method allows you to join together strings in a list with some connector string.
 #  For example, some uses of the .join() method:
 
-# ? sen = 'I am home'
+# sen = 'I am home'
 
-# ?words = sen.split()
-
-
-# ? new = words.pop()
-
-# ? words.insert(0, new)
-
-# def yoda(sen):
-#     words = sen.split()
+# words = sen.split()
 
 
+# new = words.pop()
+
+
+# words.insert(0, new)
+
+def yoda(sen):
+    words = sen.split()
+    words.insert(0, words.pop())
+    return words
+
+# ! better returns string
+
+
+def master_yoda(text):
+    return ' '.join(text.split()[::-1])
+
+
+print(master_yoda('I am home'))
 # >>> "--".join(['a','b','c'])
 # >>> 'a--b--c'
 
@@ -131,11 +142,16 @@ print(caps(st))
 # almost_there(150) --> False
 # almost_there(209) --> True
 
+
 def almost(n):
-    if n in range(90, 111) or range(190, 211):
+    if abs(n) in range(90, 111) or range(190, 211):
         return True
     else:
         return False
+
+
+def almost_there(n):
+    return ((abs(100 - n) <= 10) or (abs(200 - n) <= 10))
 
 
 # LEVEL 2 PROBLEMS
@@ -149,15 +165,26 @@ def almost(n):
 
 # new = list(enumerate(lst))
 
-def adj3(lst):
-    for i in range(0, len(lst)-1):
-        if lst[i] == 3 and lst[i+1] == 3:
+def adj3(nums):
+    for i in range(0, len(nums)-1):
+        if nums[i] == 3 and nums[i+1] == 3:
             return True
-        else:
-            return False
+    return False
 
 
-print(adj3([3, 1, 3, 4, 5]), 'nice')
+def has_33(nums):
+    for i in range(0, len(nums)-1):
+
+        # nicer looking alternative in commented code
+        # if nums[i] == 3 and nums[i+1] == 3:
+
+        if nums[i:i+2] == [3, 3]:
+            return True
+
+    return False
+
+
+print(adj3([3, 1, 2, 3, 3, 4, 5]), 'nice')
 
 #     x = lst.index()
 # i for i in enumerate(lst):
@@ -208,6 +235,8 @@ print(extra('MMMiiissssssiiippppppiii'))
 # blackjack(9,9,9) --> 'BUST'
 # blackjack(9,9,11) --> 19
 
+#! more complete uses lists of nums and prepares for multiple 11sw
+
 
 def blackjack(nums):
     amt = sum(nums)
@@ -222,12 +251,21 @@ def blackjack(nums):
     if amt <= 21:
         return "Total: {}".format(amt)
 
-    # blackjack(5,6,7)
+# blackjack(5,6,7)
 
-    # blackjack(9,9,9)
+# blackjack(9,9,9)
 
 
-nums = [10, 5, 3]
+# def blackjack(a, b, c):
+
+#     if sum((a, b, c)) <= 21:
+#         return sum((a, b, c))
+#     elif sum((a, b, c)) <= 31 and 11 in (a, b, c):
+#         return sum((a, b, c)) - 10
+#     else:
+#         return 'BUST'
+
+nums = [11, 11, 10]
 print(blackjack(nums))
 
 # ! SUMMER OF '69: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
@@ -237,24 +275,27 @@ print(blackjack(nums))
 # summer_69([2, 1, 6, 9, 11]) --> 14
 
 
-def summer_69(arr):
-    if arr.count(6) > 0 and arr.count(9) == 0:
-        del arr[arr.index(6):]
-        return sum(arr)
-    elif arr.count(6) > 0 and arr.count(9) > 0:
-        while arr.count(9) > 0:
-            del arr[arr.index(6):arr.index(9)+1]
-            if arr.count(6) > 1:
-                del arr[arr.index(6):]
-                return sum(arr)
-            elif arr.count(6) == 0:
-                return sum(arr)
-    else:
-        return sum(arr)
+def summer69(arr):
+    total = 0
+    add = True
+    for num in arr:
+        while add:
+            if num != 6:
+                total += num
+                break
+            else:
+                add = False
+        while not add:
+            if num != 9:
+                break
+            else:
+                add = True
+                break
+    return total
 
 
-arr = [2, 1, 6, 9, 11]*2
-print(summer_69(arr))
+arr = [2, 1, 6, 1, 3, 9, 11]*3
+print(summer69(arr))
 # summer_69([1, 3, 5])
 
 # summer_69([4, 5, 6, 7, 8, 9])
@@ -266,22 +307,39 @@ print(summer_69(arr))
 
 
 # TODO FIND FIRST ZERO,
-arr = [1, 7, 2, 0, 4, 5, 0, 2]
-arr.index(0)
+# arr = [1, 7, 2, 0, 4, 5, 0, 2]
+# x = 0
+# arr[x:].index(0)
+# print(arr.index(0) > 0)
 # todo if second zero SET RANGE
-print(arr[4:].index(0))
+# print('hi', arr[4:].index(0))
 # todo IF 7 AFTER RANGE PRINT TRUE
 
 
-#! find indexes of first two zeros
-# *def spy007(arr):
-#         for arr
-#  spy_game([1,2,4,0,0,7,5]) --> True
-#  spy_game([1,0,2,4,0,5,7]) --> True
-#  spy_game([1,7,2,0,4,5,0]) --> False
+def spy007(arr):
+    if 2 <= arr.count(0):
+        if 0 <= arr[arr.index(0)+1:].index(0) < arr[arr.index(0)+1:].index(7):
+            return True
+        else:
+            return False
+    else:
+        return False
+# ?
 
-# def spy_game(nums):
-#     pass
+
+def spy_game(nums):
+
+    code = [0, 0, 7, 'x']
+
+    for num in nums:
+        if num == code[0]:
+            code.pop(0)   # code.remove(num) also works
+
+    return len(code) == 1
+
+
+print(spy_game([1, 0, 2, 4, 0, 5, 7]))
+#! find indexes of first two zeros
 
 # spy_game([1,2,4,0,0,7,5])
 
@@ -293,6 +351,59 @@ print(arr[4:].index(0))
 
 # count_primes(100) --> 25
 
+
+# def count_primes(num):
+#     primes = [2]
+#     x = 3
+#     if num < 2:  # for the case of num = 0 or 1
+#         return 0
+#     while x <= num:
+#         for y in range(3, x, 2):  # test all odd factors up to x-1
+#             if x % y == 0:
+#                 x += 2
+#                 break
+#         else:
+#             primes.append(x)
+#             x += 2
+#     print(primes)
+#     return len(primes)
+
+
+def count_primes2(num):
+    primes = [2]
+    x = 3
+    if num < 2:
+        return 0
+    while x <= num:
+        for y in primes:  # use the primes list!
+            if x % y == 0:
+                x += 2  # all odds
+                break
+        else:
+            primes.append(x)
+            x += 2
+    print(primes)
+    return len(primes)
+
+
+lower = 900
+upper = 1000
+# ! Prime is a number that is only divisible by 1 and ITSELF
+# * in terms of whole numbers
+# uncomment the following lines to take input from the user
+# lower = int(input("Enter lower range: "))
+# upper = int(input("Enter upper range: "))
+
+print("Prime numbers between", lower, "and", upper, "are:")
+
+for num in range(lower, upper + 1):
+    # prime numbers are greater than 1
+    if num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                break
+        else:
+            print(num)
 # By convention, 0 and 1 are not prime.
 
 # def count_primes(num):
@@ -300,21 +411,15 @@ print(arr[4:].index(0))
 
 # count_primes(100)
 
-# Just for fun:
-# PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
 
-# print_big('a')
+# ! CHECK IF NUM PRIME
 
-# out:   *
-#       * *
-#      *****
-#      *   *
-#      *   *
+def check_prime(num):
+    for i in range(2, num):
+        if(num % i) == 0:
+            break
+        else:
+            return "{} is prime.".format(num)
 
-# HINT: Consider making a dictionary of possible patterns, and mapping the alphabet to specific 5-line combinations of patterns.
-# For purposes of this exercise, it's ok if your dictionary stops at "E".
 
-# def print_big(letter):
-#     pass
-
-# print_big('a')
+print(check_prime(9))

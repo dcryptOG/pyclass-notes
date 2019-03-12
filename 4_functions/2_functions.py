@@ -234,7 +234,54 @@ def is_prime2(num):
     return True
 
 
-is_prime2(18)
+# is_prime2(18)
+
+# import math
+# def is_prime(n):
+#     for i in range(2, int(math.sqrt(n))+1):
+#         if n%i == 0 :
+#             return False
+#     return True
+
+# range() stops before it actually gets to the second number. In this case, you want to test that number as well, so you want to round down, and then add one.
+
+# More efficient version (x10 - x1000 speed improvement):
+
+# def memoise(func):
+#     memory = {}
+#     def wrapper(n):
+#         if n in memory:
+#             return memory[n]
+#         ret = func(n)
+#         memory[n] = ret
+#         return ret
+#     return wrapper
+
+# @memoise
+# def is_prime(n):
+#     if n <= 3:
+#         return n > 1
+#     if not n%2 or not n%3:
+#         return False
+
+#     for i in range(5, int(n**0.5)+1, 6):
+#         if not n%i or not n%(i+2):
+#             return False
+#     return True
+
+# Playing in the interpreter:
+
+# >>> math.sqrt(8)
+# 2.8284271247461903
+# >>> int(math.sqrt(8)) + 1
+# 3
+# >>> for i in range(2, 2):
+#         print(i)
+
+# >>> for i in range(2, 3):
+#         print(i)
+
+# 2
 
 
 # False
