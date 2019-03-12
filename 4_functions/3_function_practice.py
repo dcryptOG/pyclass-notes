@@ -294,7 +294,7 @@ def summer69(arr):
     return total
 
 
-arr = [2, 1, 6, 1, 3, 9, 11]*3
+arr = [2, 1, 6, 1, 3, 9, 11]
 print(summer69(arr))
 # summer_69([1, 3, 5])
 
@@ -368,6 +368,7 @@ print(spy_game([1, 0, 2, 4, 0, 5, 7]))
 #     print(primes)
 #     return len(primes)
 
+#         for y in range(3, x, 2):  # test all odd factors up to x-1
 
 def count_primes2(num):
     primes = [2]
@@ -423,3 +424,6 @@ def check_prime(num):
 
 
 print(check_prime(9))
+
+
+################
