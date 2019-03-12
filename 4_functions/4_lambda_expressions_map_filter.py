@@ -1,59 +1,68 @@
 
 #!  Lambda Expressions, Map, and Filter
 
-# What are lambda functions in Python?
+# ? NORMAL FUNCTIONS are defined using the def keyword
 
-# Anonymous function is a function that is defined without a name.
+# !ANONYMOUS FUNCTION is defined W/O a name.
 
-# Normal functions are defined using the def keyword
-#
-#  Anonymous functions are defined using the lambda keyword.
+# *  Anonymous functions are defined using the LAMBDA KEYWORD.
 
 # Hence, anonymous functions are also called lambda functions.
 # How to use lambda Functions in Python?
 
 # *Syntax of Lambda Function in python
 
-# todo                                                                                        lambda arguments: expression
+# todo                                               LAMBDA ARGS: expression
 
-# Lambda functions can have any number of arguments but only one expression.
-# The expression is evaluated and returned.
-# Lambda functions can be used wherever function objects are required.
+# Lambda functions can have any MANY ARGS
+# ONLY 1 EXPRESSION(evaluated & returned).
 
+# Lambda functions can be used wherever function OBJ are REQUIRED.
 
 # Here is an example of lambda function that doubles the input value.
 
 # Program to show the use of lambda functions
-# ?
 
 
-def double(x): return x * 2
+# In the above program, lambda x: x * 2 is the lambda function.
+# Here x is the argument
+# x * 2 is the expression that gets evaluated and returned.
+
+def doubles(x): return x * 2
 
 
-# Output: 10
-print(double(5))
-
-# In the above program, lambda x: x * 2 is the lambda function. Here x is the argument and x * 2 is the expression that gets evaluated and returned.
-
-# This function has no name. It returns a function object which is assigned to the identifier double. We can now call it as a normal function. The statement
-
-# double = lambda x: x * 2
+print(doubles(3))
 
 # is nearly the same as
 
 # def double(x):
 #    return x * 2
 
-# Use of Lambda Function in python
 
-# We use lambda functions when we require a nameless function for a short period of time.
+def double(x): return x * 2
 
-# In Python, we generally use it as an argument to a higher-order function (a function that takes in other functions as arguments). Lambda functions are used along with built-in functions like filter(), map() etc.
-# Example use with filter()
 
-# The filter() function in Python takes in a function and a list as arguments.
+print(double(5))
 
-# The function is called with all the items in the list and a new list is returned which contains items for which the function evaluats to True.
+# This function has no name.
+# It returns a function object which is assigned to the identifier double.
+# We can now call it as a normal function.
+
+
+#! We use lambda functions when we require a nameless function for a short period of time.
+
+# lambda funct gernally used as ARG to HIGER-ORDER-FUNCTION
+# ! HIGHER-ORDER FUNCTION (a function that takes in other functions as arguments).
+# * Lambda functions are used along with built-in functions like filter(), map() etc.
+
+# todo                  EX filter() ===================
+
+# ? The filter() function takes in a FUNCTION and a LIST as ARGS.
+
+# The function is called with all the items in the list
+
+# NEW list is returned
+# * contains items for which the function evaluats to True.
 
 # Here is an example use of filter() function to filter out only even numbers from a list.
 
@@ -64,13 +73,19 @@ my_list = [1, 5, 4, 6, 8, 11, 3, 12]
 new_list = list(filter(lambda x: (x % 2 == 0), my_list))
 
 # Output: [4, 6, 8, 12]
-print(new_list)
+print('\nEX filter() ', new_list)
 
-# Example use with map()
+# todo ===============EX map() =====================
 
-# The map() function in Python takes in a function and a list.
+# ? The map() function takes in a FUNCTION AND a LIST as ARGS.
 
-# The function is called with all the items in the list and a new list is returned which contains items returned by that function for each item.
+# The function is called with all the items in the list
+
+# NEW list is returned
+
+# * MAP() allows you to "map" a function to an ITERABLE OBJ.
+# ? can call the same function to EVERY ITEM IN an ITERABLE (ie. list)
+# contains items returned by that function for each item.
 
 # Here is an example use of map() function to double all the items in a list.
 
@@ -81,40 +96,46 @@ my_list = [1, 5, 4, 6, 8, 11, 3, 12]
 new_list = list(map(lambda x: x * 2, my_list))
 
 # Output: [2, 10, 8, 12, 16, 22, 6, 24]
-print(new_list)
+print('\nEX map() ', new_list)
 
-# Now its time to quickly learn about two built in functions, filter and map. Once we learn about how these operate, we can learn about the lambda expression, which will come in handy when you begin to develop your skills further!
+# ! PYTHON CLASS ##########################
+
 # map function
 
-# The map function allows you to "map" a function to an iterable object. That is to say you can quickly call the same function to every item in an iterable, such as a list. For example:
-# def square(num):
-#     return num**2
 
-# my_nums = [1,2,3,4,5]
+def square(num):
+    return num**2
 
-# map(square,my_nums)
-# <map at 0x205baec21d0>
 
-# # To get the results, either iterate through map()
-# # or just cast to a list
-# list(map(square,my_nums))
+my_nums = [1, 2, 3, 4, 5]
+
+print('\n', map(square, my_nums))
+#! <map at 0x205baec21d0>
+
+# #* To get the results, either iterate through map()
+# #? OR just cast to a list
+
+print('\nEX2 MAP() ', list(map(square, my_nums)))
 # [1, 4, 9, 16, 25]
 
 # The functions can also be more complex
-# def splicer(mystring):
-#     if len(mystring) % 2 == 0:
-#         return 'even'
-#     else:
-#         return mystring[0]
-
-# mynames = ['John','Cindy','Sarah','Kelly','Mike']
 
 
-# list(map(splicer,mynames))
+def splicer(mystring):
+    if len(mystring) % 2 == 0:
+        return 'even'
+    else:
+        return mystring[0]
+
+
+mynames = ['John', 'Cindy', 'Sarah', 'Kelly', 'Mike']
+
+
+print('ex3 map() ', list(map(splicer, mynames)))
 
 # ['even', 'C', 'S', 'K', 'even']
 
-# filter function
+#!=============== filter function===================
 
 # The filter function returns an iterator yielding those items of iterable for which function(item) is true. Meaning you need to filter by a function that returns either True or False. Then passing that into filter (along with your iterable) and you will get back only the results that would return True when passed to the function.
 
