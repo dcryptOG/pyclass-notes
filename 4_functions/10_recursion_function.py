@@ -7,7 +7,7 @@
 
 # ! Python Recursive Function
 
-# It is even possible for the function to call itself. These type of construct are termed as recursive functions.
+# *RECURSIVE FUNCTION =  function to call itself.
 
 # Following is an example of recursive function to find the factorial of an integer.
 
@@ -30,7 +30,7 @@ def calc_factorial(x):
 num = 4
 print("The factorial of", num, "is", calc_factorial(num))
 
-# In the above example, calc_factorial() is a recursive functions as it calls itself.
+#! In the above example, calc_factorial() is a recursive functions as it calls itself.
 
 # When we call this function with a positive integer, it will recursively call itself by decreasing the number.
 
@@ -46,9 +46,9 @@ print("The factorial of", num, "is", calc_factorial(num))
 # 4 * 6                          # return from 2nd call
 # 24                             # return from 1st call
 
-# Our recursion ends when the number reduces to 1. This is called the base condition.
+# * BASE CONDTION = Our recursion ends when the number reduces to 1.
 
-# Every recursive function must have a base condition that stops the recursion or else the function calls itself infinitely.
+# Every recursive function MUST HAVE BASE CONDTION that stops the recursion OR else the function calls itself INFINITELY.
 
 # ? Advantages of Recursion
 
@@ -59,5 +59,5 @@ print("The factorial of", num, "is", calc_factorial(num))
 # ! Disadvantages of Recursion
 
 #     Sometimes the logic behind recursion is hard to follow through.
-#     Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
-#     Recursive functions are hard to debug.
+# *     Recursive calls are EXPENSIVE (INEFFICIENT) as they use a lot of MEMORY and TIME.
+# *     Recursive functions are hard to debug.

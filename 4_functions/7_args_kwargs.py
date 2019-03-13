@@ -202,7 +202,7 @@ def myfunc(*args):  # ! PEP 8 IS *args
     return sum(args)*.05
 
 
-print(myfunc(12, 12, 1, 2, 5))
+print('\ndef myfunc(*args):\n    return sum(args)*.05', myfunc(12, 12, 1, 2, 5))
 
 # Notice how passing the keyword "args" into the sum() function did the same thing as a tuple of arguments.
 
