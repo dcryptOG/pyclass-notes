@@ -1,15 +1,19 @@
 
-# Nested Statements and Scope
+# ! Nested Statements and Scope
 
 # Scope and Lifetime of variables
 
-# Scope of a variable is the portion of a program where the variable is recognized. Parameters and variables defined inside a function is not visible from outside. Hence, they have a local scope.
+#! SCOPE of a Var = is the portion of a program where the variable is recognized.
 
-# Lifetime of a variable is the period throughout which the variable exits in the memory. The lifetime of variables inside a function is as long as the function executes.
+# *  LOCAL SCOPE = PARAMETERS and VARS defined inside a function is not visible from outside.
 
-# They are destroyed once we return from the function. Hence, a function does not remember the value of a variable from its previous calls.
+#! LIFETIME OF A VAR = is the period throughout which the variable exits in the MEMORY.
 
-# Here is an example to illustrate the scope of a variable inside a function.
+# ?  The lifetime of variables inside a function is as long as the function executes.
+
+# They are destroyed once we return from the function.
+
+# Hence, a function does not remember the value of a variable from its previous calls.
 
 
 def my_func():
@@ -21,19 +25,27 @@ x = 20
 my_func()
 print("Value outside function:", x)
 
-# Here, we can see that the value of x is 20 initially. Even though the function my_func() changed the value of x to 10, it did not effect the value outside the function.
+# Here, we can see that the value of x is 20 initially.
 
-# This is because the variable x inside the function is different (local to the function) from the one outside. Although they have same names, they are two different variables with different scope.
+#  Even though the function my_func() changed the value of x to 10, it did not effect the value outside the function.
 
-# On the other hand, variables outside of the function are visible from inside. They have a global scope.
+# This is because the variable x inside the function is different (local to the function) from the one outside.
 
-# We can read these values from inside the function but cannot change (write) them. In order to modify the value of variables outside the function, they must be declared as global variables using the keyword global.
+# Although they have same names, they are two different variables with different scope.
 
-# Now that we have gone over writing our own functions, it's important to understand how Python deals with the variable names you assign. When you create a variable name in Python the name is stored in a name-space. Variable names also have a scope, the scope determines the visibility of that variable name to other parts of your code.
+# ! GLOBAL SCOPE = variables outside of the function are visible from inside.
 
-# Global Variables
+# ? We can read these values from inside the function
+# *but cannot change (write) them.
+# todo                                                  to change value of vars outside func, declar GLOBAL VAR using KEYWORD GLOBAL
 
-# In Python, a variable declared outside of the function or in global scope is known as global variable. This means, global variable can be accessed inside or outside of the function.
+# When you create a variable name in Python the name is stored in a name-space.
+# Variable names also have a scope, the scope determines the visibility of that variable name to other parts of your code.
+
+# ! Global Variables
+
+# In Python, a variable declared outside of the function or in global scope is known as global variable.
+# This means, global variable can be accessed inside or outside of the function.
 
 # Let's see an example on how a global variable is created in Python.
 
@@ -52,49 +64,48 @@ print("x outside:", x)
 # x inside : global
 # x outside: global
 
-# In above code, we created x as a global variable and defined a foo_() to print the global variable x. Finally, we call the foo_() which will print the value of x.
+# In above code, we created x as a global variable and defined a foo_() to print the global variable x.
+# Finally, we call the foo_() which will print the value of x.
 
-# What if you want to change value of x inside a function?
+# * What if you want to change value of x inside a function?
 
 x = "global"
 
 
-def foo_1():
-    x = x * 2
-    print(x)
+# !def foo_1():
+#  !   x = x * 2
+#!     print(x)
 
 
-foo_1()
+# !print(foo_1())
 
-# When we run the code, the will output be:
-
-# UnboundLocalError: local variable 'x' referenced before assignment
+# ? UnboundLocalError: local variable 'x' referenced before assignment
 
 # The output shows an error because Python treats x as a local variable and x is also not defined inside foo_().
 
-# To make this work we use global keyword, to learn more visit Python Global Keyword.
-# Local Variables
+# ! Local Variables
 
 # A variable declared inside the function's body or in the local scope is known as local variable.
-# Example 2: Accessing local variable outside the scope
+
+# ? Example 2: Accessing local variable outside the scope
 
 
 def foo_2():
     y = "local"
 
 
-foo_2()
-print(y)
+print('\nEX Local Var ', foo_2())
+# ! print(y)
+
 # https://www.programiz.com/python-programming/global-local-nonlocal-variables
 
 # When we run the code, the will output be:
 
-# NameError: name 'y' is not defined
+# * NameError: name 'y' is not defined
 
 # The output shows an error, because we are trying to access a local variable y in a global scope whereas the local variable only works inside foo_() or local scope.
 
-# Let's see an example on how a local variable is created in Python.
-# Example 3: Create a Local Variable
+# ? Example 3: Create a Local Variable
 
 # Normally, we declare a variable inside the function to create a local variable.
 
@@ -104,6 +115,7 @@ def foo_3():
     print(y)
 
 
+print('\nex3')
 foo_3()
 
 # When we run the code, it will output:
@@ -113,8 +125,9 @@ foo_3()
 # Let's take a look to the earlier problem where x was a global variable and we wanted to modify x inside foo_().
 # Global and local variables
 
-# Here, we will show how to use global variables and local variables in the same code.
-# Example 4: Using Global and Local variables in same code
+# ? Example 4: Using Global and Local variables in same code
+
+print('\nExample 4: Using Global and Local variables in same code')
 
 x = "global"
 
@@ -136,8 +149,13 @@ foo_4()
 
 # In the above code, we declare x as a global and y as a local variable in the foo_(). Then, we use multiplication operator * to modify the global variable x and we print both x and y.
 
-# After calling the foo_(), the value of x becomes global global because we used the x * 2 to print two times global. After that, we print the value of local variable y i.e local.
-# Example 5: Global variable and Local variable with same name
+# After calling the foo_(), the value of x becomes global global because we used the x * 2 to print two times global.
+#
+# After that, we print the value of local variable y i.e local.
+
+# ? Example 5: Global variable and Local variable with same name
+
+print('\nExample 5: Global variable and Local variable with same name')
 
 x = 5
 
@@ -155,19 +173,26 @@ print("global x:", x)
 # local x: 10
 # global x: 5
 
-# In above code, we used same name x for both global variable and local variable. We get different result when we print same variable because the variable is declared in both scopes, i.e. the local scope inside foo_() and global scope outside foo_().
+# In above code, we used same name x for both global variable and local variable.
+
+# We get different result when we print same variable because the variable is declared in both scopes, i.e. the local scope inside foo_() and global scope outside foo_().
 
 # When we print the variable inside the foo_() it outputs local x: 10, this is called local scope of variable.
 
 # Similarly, when we print the variable outside the foo_(), it outputs global x: 5, this is called global scope of variable.
-# Nonlocal Variables
 
-# Nonlocal variable are used in nested function whose local scope is not defined. This means, the variable can be neither in the local nor the global scope.
+# ! Nonlocal Variables
 
-# Let's see an example on how a global variable is created in Python.
+# Nonlocal variable are used in nested function whose local scope is not defined.
 
-# We use nonlocal keyword to create nonlocal variable.
-# Example 6: Create a nonlocal variable
+#  This means, the variable can be neither in the local nor the global scope.
+
+# We use NONLOCAL KEYWORD to create nonlocal variable.
+
+
+# ? Example 6: Create a nonlocal variable
+
+print(' Example 6: Create a nonlocal variable')
 
 
 def outer():
@@ -189,106 +214,100 @@ outer()
 # inner: nonlocal
 # outer: nonlocal
 
-# In the above code there is a nested function inner(). We use nonlocal keyword to create nonlocal variable. The inner() function is defined in the scope of another function outer().
+# In the above code there is a nested function inner().
+
+# We use nonlocal keyword to create nonlocal variable.
+
+# ! The inner() function is defined in the scope of another function outer().
 
 # Note : If we change value of nonlocal variable, the changes appears in the local variable.
 
 
-# Let's start with a quick thought experiment; imagine the following code:
-# In [1]:
+x = 25
 
-# x = 25
 
-# def printer():
-#     x = 50
-#     return x
+def printer():
+    x = 50
+    return x
 
-# # print(x)
-# # print(printer())
+
+print(x)
+print(printer())
 
 # What do you imagine the output of printer() is? 25 or 50? What is the output of print x? 25 or 50?
-# In [2]:
 
 # print(x)
 
 # 25
 
-# In [3]:
 
 # print(printer())
 
 # 50
 
-# Interesting! But how does Python know which x you're referring to in your code? This is where the idea of scope comes in. Python has a set of rules it follows to decide what variables (such as x in this case) you are referencing in your code. Lets break down the rules:
-
 # This idea of scope in your code is very important to understand in order to properly assign and call variable names.
 
 # In simple terms, the idea of scope can be described by 3 general rules:
 
-#     Name assignments will create or change local names by default.
-#     Name references search (at most) four scopes, these are:
-#         local
-#         enclosing functions
-#         global
-#         built-in
-#     Names declared in global and nonlocal statements map assigned names to enclosing module and function scopes.
+# todo 1.    1. Name assignments will create or change local names by default.
+# todo 2.     2. Name references search (at most) four scopes, these are:
+#                           local
+#                           enclosing functions
+#                           global
+#                           built-in
+# todo       3. Names declared in global and nonlocal statements map assigned names to enclosing module and function scopes.
 
 # The statement in #2 above can be defined by the LEGB rule.
 
-# LEGB Rule:
+# ! LEGB Rule:
 
-# L: Local — Names assigned in any way within a function (def or lambda), and not declared global in that function.
+# * L: Local — Names assigned in any way within a function (def or lambda), and not declared global in that function.
 
-# E: Enclosing function locals — Names in the local scope of any and all enclosing functions (def or lambda), from inner to outer.
+# * E: Enclosing function locals — Names in the local scope of any and all enclosing functions (def or lambda), from inner to outer.
 
-# G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.
+# * G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.
 
-# B: Built-in (Python) — Names preassigned in the built-in names module : open, range, SyntaxError,...
-# Quick examples of LEGB
+# * B: Built-in (Python) — Names preassigned in the built-in names module : open, range, SyntaxError,...
+
+
+# ? Quick examples of LEGB
 # Local
-# In [4]:
 
 # # x is local here:
-# f = lambda x:x**2
+def f(x): return x**2
 
 # Enclosing function locals
 
 # This occurs when we have a function inside a function (nested functions)
-# In [5]:
 
-# name = 'This is a global name'
 
-# def greet():
-#     # Enclosing function
-#     name = 'Sammy'
+name = 'This is a global name'
 
-#     def hello():
-#         print('Hello '+name)
 
-#     hello()
+def greet():
+    # Enclosing function
+    name = 'Sammy'
 
-# greet()
+    def hello():
+        print('Hello '+name)
+
+    hello()
+
+
+greet()
 
 # Hello Sammy
 
 # Note how Sammy was used, because the hello() function was enclosed inside of the greet function!
 # Global
 
-# Luckily in Jupyter a quick way to test for global variables is to see if another cell recognizes the variable!
-# In [6]:
-
-# print(name)
+print(name)
 
 # This is a global name
 
-# Built-in
-
-# These are the built-in function names in Python (don't overwrite these!)
-# In [7]:
+# ! Built-in
 
 # len
-
-# Out[7]:
 
 # <function len>
 
@@ -297,17 +316,18 @@ outer()
 # When you declare variables inside a function definition, they are not related in any way to other variables with the same names used outside the function - i.e. variable names are local to the function. This is called the scope of the variable. All variables have the scope of the block they are declared in starting from the point of definition of the name.
 
 # Example:
-# In [8]:
 
-# x = 50
+x = 50
 
-# def func(x):
-#     print('x is', x)
-#     x = 2
-#     print('Changed local x to', x)
 
-# func(x)
-# print('x is still', x)
+def func(x):
+    print('x is', x)
+    x = 2
+    print('Changed local x to', x)
+
+
+func(x)
+print('x is still', x)
 
 # x is 50
 # Changed local x to 2
@@ -325,20 +345,21 @@ outer()
 # You can use the values of such variables defined outside the function (assuming there is no variable with the same name within the function). However, this is not encouraged and should be avoided since it becomes unclear to the reader of the program as to where that variable’s definition is. Using the global statement makes it amply clear that the variable is defined in an outermost block.
 
 # Example:
-# In [9]:
 
-# x = 50
+x = 50
 
-# def func():
-#     global x
-#     print('This function is now using the global x!')
-#     print('Because of global x is: ', x)
-#     x = 2
-#     print('Ran func(), changed global x to', x)
 
-# print('Before calling func(), x is: ', x)
-# func()
-# print('Value of x (outside of func()) is: ', x)
+def func1():
+    global x
+    print('This function is now using the global x!')
+    print('Because of global x is: ', x)
+    x = 2
+    print('Ran func(), changed global x to', x)
+
+
+print('Before calling func(), x is: ', x)
+func1()
+print('Value of x (outside of func()) is: ', x)
 
 # Before calling func(), x is:  50
 # This function is now using the global x!

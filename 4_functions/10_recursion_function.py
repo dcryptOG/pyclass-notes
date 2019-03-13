@@ -2,7 +2,8 @@
 
 # Recursion is the process of defining something in terms of itself.
 
-# A physical world example would be to place two parallel mirrors facing each other. Any object in between them would be reflected recursively.
+# A physical world example would be to place two parallel mirrors facing each other.
+#  Any object in between them would be reflected recursively.
 # Python Recursive Function
 
 # We know that in Python, a function can call other functions. It is even possible for the function to call itself. These type of construct are termed as recursive functions.
