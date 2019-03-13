@@ -137,87 +137,93 @@ print('ex3 map() ', list(map(splicer, mynames)))
 
 #!=============== filter function===================
 
-# The filter function returns an iterator yielding those items of iterable for which function(item) is true. Meaning you need to filter by a function that returns either True or False. Then passing that into filter (along with your iterable) and you will get back only the results that would return True when passed to the function.
-
-# def check_even(num):
-#     return num % 2 == 0
-
-
-# nums = [0,1,2,3,4,5,6,7,8,9,10]
+# * filter() RETURNS an ITERATOR yielding those ITEMS of ITERABLE for which FUNCTION(ITEM) is True.
+# ? Must filter by FUNC that RETURNS either True OR False.
+# Then... passing that into filter (along with your iterable) you ONLY get the results that RETURN True when passed to the function.
 
 
-# filter(check_even,nums)
+def check_even(num):
+    return num % 2 == 0
+
+
+nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+print('\nEX4 filter(check_even, nums))', filter(check_even, nums))
 
 # <filter at 0x205baed4710>
 
 
-# list(filter(check_even,nums))
+print('\nEX5 list(filter(check_even, nums)))', list(filter(check_even, nums)))
 
-# [0, 2, 4, 6, 8, 10]
+[0, 2, 4, 6, 8, 10]
 
 # lambda expression
 
-# One of Pythons most useful (and for beginners, confusing) tools is the lambda expression. lambda expressions allow us to create "anonymous" functions. This basically means we can quickly make ad-hoc functions without needing to properly define a function using def.
+# LAMBDA EXPRESSIONS allow us to create "anonymous" functions.
+# * Quickly make AD-HOC FUNCTIONS without needing to properly define a function using def.
 
-# Function objects returned by running lambda expressions work exactly the same as those created and assigned by defs. There is key difference that makes lambda useful in specialized roles:
+# Function objects returned by running lambda expressions work exactly the same as those created and assigned by defs.
 
-# lambda's body is a single expression, not a block of statements.
+# ! There is KEY DIFFERENCE that makes lambda useful in specialized roles:
 
-#     The lambda's body is similar to what we would put in a def body's return statement. We simply type the result as an expression instead of explicitly returning it. Because it is limited to an expression, a lambda is less general that a def. We can only squeeze design, to limit program nesting. lambda is designed for coding simple functions, and def handles the larger tasks.
+# ?               1. LAMBDA's BODY is a SINGLE EXPRESSION
+#                     NOT a block of statements.
 
-# Lets slowly break down a lambda expression by deconstructing a function:
+# *     The LAMBDA'S BODY is similar to a DEF BODY'S RETURN STATEMENT.
+#  We simply type the result as an expression instead of explicitly returning it.
+
+# LAMBDA is limited to an expression, thus less general that a def.
+# Squeeze design, toLIMIT PROGRAM NEXTING.
+
+# ?  lambda is designed for coding simple functions, and def handles the larger tasks.
+
+# * Lets slowly break down a lambda expression by deconstructing a function:
 
 # def square(num):
 #     result = num**2
 #     return result
 
 
-# square(2)
+print(square(2))
 
-# 4
 
-# We could simplify it:
+# * We could simplify it:
 
 # def square(num):
 #     return num**2
 
 
-# square(2)
+# * We could actually even write this all on one line.
 
-# 4
-
-# We could actually even write this all on one line.
-
-# def square(num): return num**2
+def sq(num): return num**2
 
 
-# square(2)
+print('\nEX simplified 1 line\n def sq(num): return num**2\n', sq(2))
 
-# 4
 
-# This is the form a function that a lambda expression intends to replicate. A lambda expression can then be written as:
+# This is the form a function that a lambda expression intends to replicate.
 
-# lambda num: num ** 2
+# ? A LAMBDA EXPRESSION can then be written as:
+
+# todo                    lambda num: num ** 2
 
 # <function __main__.<lambda>>
 
 
-# # You wouldn't usually assign a name to a lambda expression, this is just for demonstration!
-# square = lambda num: num **2
+# # You wouldn't usually assign a name to a lambda expression, square = lambda num: num **2
 
+# So why would use this? Many function calls need a function passed in, such as map and filter.
+# Often you only need to use the function you are passing in once, so instead of formally defining it, you just use the lambda expression.
 
-# square(2)
-
-# 4
-
-# So why would use this? Many function calls need a function passed in, such as map and filter. Often you only need to use the function you are passing in once, so instead of formally defining it, you just use the lambda expression. Let's repeat some of the examples from above with a lambda expression
-
-# list(map(lambda num: num ** 2, my_nums))
+print('\nlist(map(lambda num: num ** 2, my_nums))\n',
+      list(map(lambda num: num ** 2, my_nums)))
 
 # [1, 4, 9, 16, 25]
 
 
-# list(filter(lambda n: n % 2 == 0,nums))
+print('\nlist(filter(lambda n: n % 2 == 0,nums))\n',
+      list(filter(lambda n: n % 2 == 0, nums)))
 
 # [0, 2, 4, 6, 8, 10]
 
