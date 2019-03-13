@@ -8,8 +8,8 @@ print(abc)
 # SLICE SYNTAX
 # [start:stop:step]
 # slicing has start stop & step size
-print('REVERSE trick abc[-1]')
-print(abc[-1])
+print('REVERSE trick abc[::-1]')
+print(abc[::-1])
 #
 print('abc[2:], abc[:3], abc[5:8]')
 print(abc[2:], abc[:3], abc[5:8])

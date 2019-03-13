@@ -15,7 +15,7 @@ list1 = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 1, 1]
 print(list1)
 set(list1)
 print('set(list1)')
-print(set(list1))
+print('Output', set(list1))
 print('CANT HAVE TWO OF SAME ELEMENTS')
 print('MISSISSIPPI')
 print("set('MISSISSIPPI')")
@@ -32,6 +32,8 @@ print('\nNone PLACEHOLDER for un/re-assigned objects')
 b = None
 print('b = None')
 print(b)
+# print(set(hello))
+# print(', '.join(x[:-1]) + " or " + x[-1])
 
 # What is a set in Python?
 

@@ -14,8 +14,8 @@
 
 # todo                                               LAMBDA ARGS: expression
 
-# Lambda functions can have any MANY ARGS
-# ONLY 1 EXPRESSION(evaluated & returned).
+# ? Lambda functions can have any MANY ARGS
+# ! ONLY 1 EXPRESSION(evaluated & returned).
 
 # Lambda functions can be used wherever function OBJ are REQUIRED.
 
@@ -55,7 +55,7 @@ print(double(5))
 # ! HIGHER-ORDER FUNCTION (a function that takes in other functions as arguments).
 # * Lambda functions are used along with built-in functions like filter(), map() etc.
 
-# todo                  EX filter() ===================
+# todo ============ EX filter() ===================
 
 # ? The filter() function takes in a FUNCTION and a LIST as ARGS.
 
