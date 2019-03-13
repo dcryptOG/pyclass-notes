@@ -192,7 +192,7 @@ print("global x:", x)
 
 # ? Example 6: Create a nonlocal variable
 
-print(' Example 6: Create a nonlocal variable')
+print('\nExample 6: Create a nonlocal variable')
 
 
 def outer():
@@ -222,7 +222,9 @@ outer()
 
 # Note : If we change value of nonlocal variable, the changes appears in the local variable.
 
+print('\n=====UDEMY ACTIVITES======\n')
 
+print('EX1')
 x = 25
 
 
@@ -249,37 +251,48 @@ print(printer())
 
 # In simple terms, the idea of scope can be described by 3 general rules:
 
-# todo 1.    1. Name assignments will create or change local names by default.
-# todo 2.     2. Name references search (at most) four scopes, these are:
-#                           local
-#                           enclosing functions
-#                           global
-#                           built-in
-# todo       3. Names declared in global and nonlocal statements map assigned names to enclosing module and function scopes.
+# *   1. NAME ASSIGN will create or change local names by default.
+# *      2. Name ref. search (at most) 4 SCOPES, these are:
+# todo                           L = local
+# todo                           E = enclosing functions
+# todo                           G = global
+# todo                           B = built-in
+# *       3. NAMES in GLOBAL and NONLOCAL statements map assigned names to ENCLOSING MODULE and FUNCTION SCOPES.
 
 # The statement in #2 above can be defined by the LEGB rule.
 
 # ! LEGB Rule:
 
-# * L: Local — Names assigned in any way within a function (def or lambda), and not declared global in that function.
+# ? L: LOCAL —
+# NAMES assigned in any way WITHIN a FUNCTION (def or lambda), and NOT declared global in that function.
 
-# * E: Enclosing function locals — Names in the local scope of any and all enclosing functions (def or lambda), from inner to outer.
+# ? E: ENCLOSING FUNCTION LOCALS —
+# NAMES in the LOCAL SCOPE of any AND all ENCLOSING FUNCTIONS (def or lambda), from inner to outer.
 
-# * G: Global (module) — Names assigned at the top-level of a module file, or declared global in a def within the file.
+# ? G: GLOBAL (module) —
+# Names assigned at the TOP-LEVEL of a module file, or declared GLOBAL in a DEF within the file.
 
-# * B: Built-in (Python) — Names preassigned in the built-in names module : open, range, SyntaxError,...
+# ? B: BUILT-IN (Python) —
+# Names preassigned in the built-in names module : open, range, SyntaxError,...
 
 
 # ? Quick examples of LEGB
 # Local
 
 # # x is local here:
+
+print('\nEX2: LOCAL VAR\n', 'def f(x): return x**2\n', 'x is loval')
+
+
 def f(x): return x**2
 
 # Enclosing function locals
 
 # This occurs when we have a function inside a function (nested functions)
 
+
+print('\nEX3: Enclosing Function Locals\nname="This is a global name"\n',
+      '\ndef greet():\n    name = "Sammy"\n    def hello():\n        print("Hello " + name)\n    hello()\n')
 
 name = 'This is a global name'
 
@@ -290,10 +303,11 @@ def greet():
 
     def hello():
         print('Hello '+name)
-
+# ! LOCAL name= 'Geoff'
     hello()
 
 
+print('Sammy is Enclosing Func Local Var\ngreet()')
 greet()
 
 # Hello Sammy
@@ -301,33 +315,39 @@ greet()
 # Note how Sammy was used, because the hello() function was enclosed inside of the greet function!
 # Global
 
-print(name)
+print('\nGlobal var\n', name)
 
 # This is a global name
 
 # ! Built-in
 
-# len
+# * RESERVRED len()
 
 # <function len>
 
 # Local Variables
 
-# When you declare variables inside a function definition, they are not related in any way to other variables with the same names used outside the function - i.e. variable names are local to the function. This is called the scope of the variable. All variables have the scope of the block they are declared in starting from the point of definition of the name.
+# When you declare variables inside a function definition, they are not related in any way to other variables with the same names used outside the function
+# - i.e. variable names are local to the function.
+#  This is called the scope of the variable.
+# ? All variables have the scope of the block they are declared in starting from the point of definition of the name.
 
 # Example:
-
+print('\nEX4:\n')
 x = 50
 
 
 def func(x):
-    print('x is', x)
+    print(f'output: X is {x}')
     x = 2
-    print('Changed local x to', x)
+    # ! x=2 LOCAL REASSIGNMENT
+    print(f'output: Changed local x to {x}')
 
 
+print('func(x)')
 func(x)
-print('x is still', x)
+
+print('\nx is still', x)
 
 # x is 50
 # Changed local x to 2
@@ -346,20 +366,22 @@ print('x is still', x)
 
 # Example:
 
+print('\nEX5\nGLOBAL_KW\n')
 x = 50
 
 
 def func1():
     global x
-    print('This function is now using the global x!')
+    print('OUTPUT\nThis function is now using the global x!')
     print('Because of global x is: ', x)
     x = 2
     print('Ran func(), changed global x to', x)
 
 
 print('Before calling func(), x is: ', x)
+print('\ndef func1():\n    global x\n    x = 2\n')
 func1()
-print('Value of x (outside of func()) is: ', x)
+print('\nValue of x (outside of func()) is: ', x)
 
 # Before calling func(), x is:  50
 # This function is now using the global x!
@@ -367,11 +389,16 @@ print('Value of x (outside of func()) is: ', x)
 # Ran func(), changed global x to 2
 # Value of x (outside of func()) is:  2
 
+print('\nEX6: BEST PRACTICE REASSIGN\n')
+print('def func1(x):\n    x = 2\n    return x\n')
+
+print('print(x)\noutput: 50')
+print('\nx = func(x)\nprint(x)\noutput: 2')
+
 # The global statement is used to declare that x is a global variable - hence, when we assign a value to x inside the function, that change is reflected when we use the value of x in the main block.
 
 # You can specify more than one global variable using the same global statement e.g. global x, y, z.
-# Conclusion
 
-# You should now have a good understanding of Scope (you may have already intuitively felt right about Scope which is great!) One last mention is that you can use the globals() and locals() functions to check what are your current local and global variables.
+# ! globals() and locals() functions to check what are your current local and global variables.
 
 # Another thing to keep in mind is that everything in Python is an object! I can assign variables to functio

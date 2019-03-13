@@ -8,7 +8,6 @@
 # *  Anonymous functions are defined using the LAMBDA KEYWORD.
 
 # Hence, anonymous functions are also called lambda functions.
-# How to use lambda Functions in Python?
 
 # *Syntax of Lambda Function in python
 
@@ -106,19 +105,23 @@ print('\nEX map() ', new_list)
 def square(num):
     return num**2
 
+# for item in map(square, my_nums): print(item)
+
 
 my_nums = [1, 2, 3, 4, 5]
 
-print('\n', map(square, my_nums))
-#! <map at 0x205baec21d0>
+print('\nmap(square, my_nums)\n', map(square, my_nums))
+# ! <map at 0x205baec21d0>
 
 # #* To get the results, either iterate through map()
 # #? OR just cast to a list
 
-print('\nEX2 MAP() ', list(map(square, my_nums)))
+print('\nEX2\nlist(map(square, my_nums))\n ', list(map(square, my_nums)))
+
 # [1, 4, 9, 16, 25]
 
-# The functions can also be more complex
+#! ERROR W/ square() ---x--- list(map(square(), my_nums))
+# *Map will execute function, so no need ()
 
 
 def splicer(mystring):
@@ -131,7 +134,7 @@ def splicer(mystring):
 mynames = ['John', 'Cindy', 'Sarah', 'Kelly', 'Mike']
 
 
-print('ex3 map() ', list(map(splicer, mynames)))
+print('\nEX3 map() ', list(map(splicer, mynames)))
 
 # ['even', 'C', 'S', 'K', 'even']
 
@@ -149,16 +152,19 @@ def check_even(num):
 nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-print('\nEX4 filter(check_even, nums))', filter(check_even, nums))
+print('\nEX4\n filter(check_even, nums))\n', filter(check_even, nums))
 
 # <filter at 0x205baed4710>
 
 
-print('\nEX5 list(filter(check_even, nums)))', list(filter(check_even, nums)))
+print('\nEX5\n list(filter(check_even, nums)))\n',
+      list(filter(check_even, nums)))
 
-[0, 2, 4, 6, 8, 10]
+# [0, 2, 4, 6, 8, 10]
 
-# lambda expression
+# alt expression: for n in filter(check_even, mynums): print(n)
+
+#! lambda expression =====================================
 
 # LAMBDA EXPRESSIONS allow us to create "anonymous" functions.
 # * Quickly make AD-HOC FUNCTIONS without needing to properly define a function using def.
@@ -184,6 +190,7 @@ print('\nEX5 list(filter(check_even, nums)))', list(filter(check_even, nums)))
 #     result = num**2
 #     return result
 
+print('\nEX 6 lambda expression')
 
 print(square(2))
 
@@ -199,7 +206,7 @@ print(square(2))
 def sq(num): return num**2
 
 
-print('\nEX simplified 1 line\n def sq(num): return num**2\n', sq(2))
+print('\nEX simplified 1 line\nlist(map(lambda num: num**2, my_nums))')
 
 
 # This is the form a function that a lambda expression intends to replicate.
@@ -207,6 +214,8 @@ print('\nEX simplified 1 line\n def sq(num): return num**2\n', sq(2))
 # ? A LAMBDA EXPRESSION can then be written as:
 
 # todo                    lambda num: num ** 2
+
+print(list(map(lambda num: num**2, my_nums)))
 
 # <function __main__.<lambda>>
 
@@ -216,32 +225,37 @@ print('\nEX simplified 1 line\n def sq(num): return num**2\n', sq(2))
 # So why would use this? Many function calls need a function passed in, such as map and filter.
 # Often you only need to use the function you are passing in once, so instead of formally defining it, you just use the lambda expression.
 
-print('\nlist(map(lambda num: num ** 2, my_nums))\n',
+print('\nEX 8\nlist(map(lambda num: num ** 2, my_nums))\n',
       list(map(lambda num: num ** 2, my_nums)))
 
 # [1, 4, 9, 16, 25]
 
 
-print('\nlist(filter(lambda n: n % 2 == 0,nums))\n',
+print('\nEX9\nlist(filter(lambda n: n % 2 == 0,nums))\n',
       list(filter(lambda n: n % 2 == 0, nums)))
 
 # [0, 2, 4, 6, 8, 10]
 
-# Here are a few more examples, keep in mind the more comples a function is, the harder it is to translate into a lambda expression, meaning sometimes its just easier (and often the only way) to create the def keyword function.
-
 # Lambda expression for grabbing the first character of a string:
 
-# lambda s: s[0]
+
+lambda s: s[0]
+
+print('\nEX10\n', 'list(map(lambda x:x[0], mynames)')
+print(list(map(lambda x: x[0], mynames)))
 
 # <function __main__.<lambda>>
 
 # Lambda expression for reversing a string:
 
-# lambda s: s[::-1]
+print('\nEX11\n', 'list(map(lambda x:x[::-1], mynames))')
+print(list(map(lambda x: x[::-1], mynames)))
+lambda s: s[::-1]
 
 # <function __main__.<lambda>>
 
-# You can even pass in multiple arguments into a lambda expression. Again, keep in mind that not every function can be translated into a lambda expression.
+# You can even pass in multiple arguments into a lambda expression.
+# NOT every function can be translated into a lambda expression.
 
 # lambda x,y : x + y
 
