@@ -101,11 +101,61 @@ def fuck(pos):
 print(fuck(1), fuck(2), fuck(3), fuck(4), fuck(
     5), fuck(6), fuck(7), fuck(8), fuck(9))
 
+keys = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+moves = dict.fromkeys(keys)
+print(moves)
+
+# num = 1
+# val = 'x'
+pos = {1, 2, 6, 7, 9}
+
+move = dict.fromkeys(pos, 'x')
+
+print(move)
+moves.update(move)
+print(moves)
+
+# for i in moves.get(i):
+print(moves[1])
+# print(moves[1][0] == moves[2][0] == moves[3][0])
+
+
+# print(moves.get(i) == moves.get(i+1) == moves.get(i+2))
+
+
+def win(moves):
+    i = 1
+    for i in moves:
+        if i == 1 or i == 4 or i == 7:
+            if moves.get(i) == moves.get(i+1) == moves.get(i+2):
+                return True
+            else:
+                break
+        if i == 1 or i == 2 or i == 3:
+            if moves.get(i) == moves.get(i+3) == moves.get(i+6):
+                return True
+            else:
+                break
+        if i == 3 or i == 1:
+            if moves.get(i) == moves.get(i+4) == moves.get(i+4):
+                return True
+            else:
+                break
+        else:
+            break
+        i += 1
+    return False
+
+
+print(win(moves))
+#! win conditions
+# moves = {1: '', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: '', 9: ''}
 # def fuck(pos):
 #     current = []
 #     for b in board[pos]:
 #         current.append(b)
 #     return current
+
 
 test = ['Python', 'Java', 'Ruby']
 s = ''
