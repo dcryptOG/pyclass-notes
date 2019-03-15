@@ -1,8 +1,7 @@
-board = {1: ['_', 1, '_', '|'], 2: [
-    '_2_|'], 3: ['_3_'], 4: ['\n_4_|'], 5: [
-    '_5_|'], 6: ['_6_'], 7: ['\n 7 | '], 8: [' 8 |'],
-    9: [' 9 ']}
-print(board[1][0], board[1][1], board[1][2])
+board = {1: ['__{num}{val}__|'.format(num="1", val="")], 2:  ['__{num}{val}__|'.format(num="2", val="")], 3: ['__{num}{val}__'.format(num="3", val="")],
+         4: ['\n__{num}{val}__|'.format(num="4", val="")], 5: ['__{num}{val}__|'.format(num="5", val="")], 6:  ['__{num}{val}__'.format(num="6", val="")],
+         7:  ['\n   {num}{val}   |'.format(num="7", val="")], 8: ['   {num}{val}   |'.format(num="8", val="")], 9: ['   {num}{val}   '.format(num="9", val="")]}
+# print(board[1][0], board[1][1], board[1][2])
 
 
 # def fuck(pos):
