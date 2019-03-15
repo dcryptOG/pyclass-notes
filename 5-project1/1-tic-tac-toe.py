@@ -69,18 +69,19 @@
 #     for move in moves:
 #         print(patterns[move])
 
-#! def ttt(moves):
-#     patterns = {1: '  *  ', 2: ' * * ', 3: '*   *', 4: '*****',
+#! top middle bottom
+# def ttt(moves):
+#     patterns = {1: ['        |      |\n__{num}{val}__|'.format(num=1, val='')], 2: ['__{num}{val}__|'.format(num="2", val="")], 3: '*   *', 4: '*****',
 #                 5: '**** ', 6: '   * ', 7: ' *   ', 8: '*   * ', 9: '*    '}
 #     board = {1: [1, 2, 4, 3, 3], 'B': [5, 3, 5, 3, 5], 'C': [
 #         4, 9, 9, 9, 4], 'D': [5, 3, 3, 3, 5], 'E': [4, 9, 4, 9, 4]}
 #     for move in board[moves]:
-#         print(patterns[move])
+#         print(patterns[move][0])
 
 
 # nums = [1, 2]
 # result = map(ttt, nums)
-# ?print(ttt(1))
+# print(ttt(1))
 
 #! so you want a board and a moves no patterns
 
@@ -92,23 +93,19 @@ board = {1: ['        |         |\n__{num}{val}__|'.format(num="1", val="")],
          8: ['   {num}{val}   |'.format(num="8", val="")], 9: ['   {num}{val}   '.format(num="9", val="")]}
 
 
+def fuck(pos):
+    for b in board[pos]:
+        return b
+
+
+print(fuck(1), fuck(2), fuck(3), fuck(4), fuck(
+    5), fuck(6), fuck(7), fuck(8), fuck(9))
+
 # def fuck(pos):
 #     current = []
 #     for b in board[pos]:
 #         current.append(b)
 #     return current
-
-def fuck(pos):
-    for b in board[pos]:
-        return b
-#! now
-
-
-# nums = [1, 2, 3, 5, 6, 7, 8, 9]
-# for num in nums:
-#     print(fuck(num))
-print(fuck(1), fuck(2), fuck(3), fuck(4), fuck(
-    5), fuck(6), fuck(7), fuck(8), fuck(9))
 
 test = ['Python', 'Java', 'Ruby']
 s = ''
