@@ -107,7 +107,7 @@ print(moves)
 
 # num = 1
 # val = 'x'
-pos = {1, 2, 6, 7, 9}
+pos = {1, 4, 5, 6, 7, 8, 9}
 
 move = dict.fromkeys(pos, 'x')
 
@@ -124,23 +124,24 @@ print(moves[1])
 
 
 def win(moves):
+    '''function checks if win conditions 3x across, down or diag'''
     i = 1
     for i in moves:
         if i == 1 or i == 4 or i == 7:
             if moves.get(i) == moves.get(i+1) == moves.get(i+2):
                 return True
             else:
-                break
+                continue
         if i == 1 or i == 2 or i == 3:
             if moves.get(i) == moves.get(i+3) == moves.get(i+6):
                 return True
             else:
-                break
+                continue
         if i == 3 or i == 1:
             if moves.get(i) == moves.get(i+4) == moves.get(i+4):
                 return True
             else:
-                break
+                continue
         else:
             break
         i += 1
