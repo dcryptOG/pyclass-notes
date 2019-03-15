@@ -70,29 +70,30 @@ print(ran_bool(3, 1, 10))
 # In [7]:
 
 
+# def up_low(s):
+#     up = 0
+#     low = 0
+#     for c in s:
+#         if c.isupper() is True:
+#             up += 1
+#         else:
+#             low += 1
+#     return "Totall upper {} total lower {}".format(up, low)
+
+
 def up_low(s):
-    up = 0
-    low = 0
+    d = {"upper": 0, "lower": 0}
     for c in s:
-        if c.isupper() is True:
-            up += 1
+        if c.isupper():
+            d["upper"] += 1
+        elif c.islower():
+            d["lower"] += 1
         else:
-            low += 1
-    return "Totall upper {} total lower {}".format(up, low)
+            pass
 
 
 s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
 print(up_low(s))
-
-# def up_low(s):
-#     d={"upper":0, "lower":0}
-#     for c in s:
-#         if c.isupper():
-#             d["upper"]+=1
-#         elif c.islower():
-#             d["lower"]+=1
-#         else:
-#             pass
 
 # Original String :  Hello Mr. Rogers, how are you this fine Tuesday?
 # No. of Upper case characters :  4
@@ -151,11 +152,14 @@ print(multiply([1, 2, 3, 4]))
 # In [13]:
 
 
-#! def palindrome(s):
+# ! def palindrome(s):
 #     if s[::-1] == s:
 #         return True
 #     else:
 #         return False
+# !OR
+# def palindrome(s):
+#         return s == s[::-1]
 
 def palindrome(s):
 
@@ -180,13 +184,16 @@ print(palindrome('helleh'))
 # ? Hint: Look at the string module
 
 # * try without making list and sort
-# !def ispangram(str1, alphabet=string.ascii_lowercase):
-#     lst = sorted(list(set(str1)))
+
+
+# def ispangram(str1, alphabet=string.ascii_lowercase):
+#     lst = set(str1.lower())
 #     str = ''.join(lst).lower()
-#     if str == alphabet:
+#     abc = set(alphabet)
+#     if lst <= abc:
 #         return True
 #     else:
-#         return False
+#         return f'False {lst} vs/n ------ {abc}'
 
 
 def ispangram(str1, alphabet=string.ascii_lowercase):
@@ -195,7 +202,7 @@ def ispangram(str1, alphabet=string.ascii_lowercase):
 
 
 print(ispangram('abcdefghijklmnopqrstuvwxyz'))
-
+print(ispangram('The quick brown fox jumps over the lazy dog'))
 # Out[16]:
 
 # True
