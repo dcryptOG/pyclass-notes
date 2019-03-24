@@ -1,4 +1,11 @@
 # LIST COMPREHENSIONS
+# *[ EXPRESSION for item in list if conditional ]
+# todo EXPRESSION is first instead of last in list comprehension
+# This is equivalent to:
+
+# * for item in list:
+#     if conditional:
+#  ?       expression
 print('List Comprehensions - append is read as default\n')
 print("mylist = []\nmystring = 'hello'\nfor letter in mystring:\n    mylist.append(letter)")
 mylist = []

@@ -46,6 +46,7 @@ print(lst)
 
 lst.append(9)
 
+
 print(len(lst))
 
 # Great! Now how about count()? The count() method will count the number of occurrences of an element in a list.
@@ -63,3 +64,25 @@ rev = lst.reverse()
 
 # count(...) method of builtins.list instance
 #     L.count(value) -> integer -- return number of occurrences of value
+nums = [5, 2, 3, 4, 5]
+print(nums[0]*nums[4])
+
+
+def adjacentElementsProduct(inputArray):
+    prod = []
+    for i in range(1, len(inputArray)-1):
+        prod.append(inputArray[i]*inputArray[i+1])
+    return max(prod)
+
+
+# def adjacentElementsProduct(inputArray):
+#     prod = []
+#     i = 0
+#     while i < len(inputArray):
+#         for i in inputArray:
+#             prod.append(inputArray[i]*inputArray[i+1])
+#             i += 1
+#     return max(prod)
+
+
+print(adjacentElementsProduct([1, 2, 456, 2]))
