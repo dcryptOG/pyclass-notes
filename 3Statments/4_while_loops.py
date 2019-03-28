@@ -7,7 +7,7 @@
 # The body of the loop is entered only if the test_expression evaluates to True.
 # After one iteration, the test expression is checked again.
 # This process continues until the test_expression evaluates to False.
-
+# TODO ELSE in WHILE IS WHEN CONDITION IS FALSE
 # Program to add natural
 # numbers upto
 # sum = 1+2+3+...+n

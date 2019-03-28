@@ -13,7 +13,10 @@
 
 # todo                                               LAMBDA ARGS: expression
 
-# ? Lambda functions can have any MANY ARGS
+# todo LAMBDA USED W/ BUILT IN FUNCTIONS
+
+# * Lambda can have MANY ARGS
+
 # ! ONLY 1 EXPRESSION(evaluated & returned).
 
 # Lambda functions can be used wherever function OBJ are REQUIRED.
@@ -23,25 +26,17 @@
 # Program to show the use of lambda functions
 
 
-# In the above program, lambda x: x * 2 is the lambda function.
-# Here x is the argument
-# x * 2 is the expression that gets evaluated and returned.
+def cube(y):
+    return y*y*y
+
+
+def g(x): return x*x*x
+
 
 def doubles(x): return x * 2
 
 
 print(doubles(3))
-
-# is nearly the same as
-
-# def double(x):
-#    return x * 2
-
-
-def double(x): return x * 2
-
-
-print(double(5))
 
 # This function has no name.
 # It returns a function object which is assigned to the identifier double.

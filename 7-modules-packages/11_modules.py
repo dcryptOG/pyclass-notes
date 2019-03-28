@@ -107,7 +107,7 @@ import random
 # >>> sys.path
 # ['',
 # 'C:\\Python33\\Lib\\idlelib',
-# 'C:\\Windows\\system32\\python33.zip',
+#!'C:\\Windows\\system32\\python33.zip',
 # 'C:\\Python33\\DLLs',
 # 'C:\\Python33\\lib',
 # 'C:\\Python33',

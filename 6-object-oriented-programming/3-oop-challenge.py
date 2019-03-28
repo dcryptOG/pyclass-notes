@@ -1,73 +1,42 @@
+class Animal:
+    def __init__(self, **kwargs):
+        self.species = kwargs.get("species")
+        self.age = kwargs.get("age")
+        self.sound = kwargs.get("sound")
 
-# Object Oriented Programming Challenge
+# >>> wolf.color
+# AttributeError...
 
-# For this challenge, create a bank account class that has two attributes:
+# No, it's not! But there weren't any errors when I created the instance. Why isn't the attribute available?
 
-#     owner
-#     balance
+# Well, because I didn't create it. Remember, Python is very explicit. If I don't do something explicitly, Python doesn't do it at all. Since I didn't assign a color attribute to self, my instance doesn't have a color attribute.
 
-# and two methods:
+# This is where setattr comes in. setattr lets me set attributes that I don't know about beforehand. I can, of course, go back and explicitly define a color attribute but what if the next user comes along and she wants a height or weight attribute? A year from now, Animal.__init__ might be hundreds of lines long with attribute declarations! And some of those attributes will only apply to a few animals!
 
-#     deposit
-#     withdraw
+# But...if I'm clever and use setattr, I can just happily accept any and all attributes that someone gives for a particular Animal instance without having to continually update __init__.
 
-# As an added requirement, withdrawals may not exceed the available balance.
 
-# Instantiate your class, make several deposits and withdrawals, and test to make sure the account can't be overdrawn.
-# In [1]:
+class Animals:
+    def __init__(self, **kwargs):
+        for attribute, value in kwargs.items():
+            setattr(self, attribute, value)
 
-# class Account:
-#     pass
+# So, since I have a handy-dandy kwargs dict due to using **kwargs in the method parameters, I can loop through it's items method and pull out the two values from each iteration into attribute and value variables.
 
-# In [2]:
+# The setattr function takes three arguments: the object to work on, the attribute name to define, and the value to give that attribute. Now, no matter what attribute values I give to my object (assuming they're valid attribute names), my class will happily apply them.
 
-# # 1. Instantiate the class
-# acct1 = Account('Jose',100)
 
-# In [3]:
+# a = Animals
+# a.__init__(self.name=name)
 
-# # 2. Print the object
-# print(acct1)
 
-# Account owner:   Jose
-# Account balance: $100
+def intro(**data):
+    print("\nData type of argument:", type(data))
 
-# In [4]:
+    for key, value in data.items():
+        print("{} is {}".format(key, value))
 
-# # 3. Show the account owner attribute
-# acct1.owner
 
-# Out[4]:
-
-# 'Jose'
-
-# In [5]:
-
-# # 4. Show the account balance attribute
-# acct1.balance
-
-# Out[5]:
-
-# 100
-
-# In [6]:
-
-# # 5. Make a series of deposits and withdrawals
-# acct1.deposit(50)
-
-# Deposit Accepted
-
-# In [7]:
-
-# acct1.withdraw(75)
-
-# Withdrawal Accepted
-
-# In [8]:
-
-# # 6. Make a withdrawal that exceeds the available balance
-# acct1.withdraw(500)
-
-# Funds Unavailable!
-
-# Good job!
+intro(Firstname="Sita", Lastname="Sharma", Age=22, Phone=1234567890)
+intro(Firstname="John", Lastname="Wood", Email="johnwood@nomail.com",
+      Country="Wakanda", Age=25, Phone=9876543210)
