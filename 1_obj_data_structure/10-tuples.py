@@ -1,5 +1,7 @@
-# TUPLES are IMMUTABLE lists
-# elements inside Tuples cannot be reassigned
+# TUPLES
+#! IMMUTABLE lists
+#! ORDERED
+# lements inside Tuples cannot be reassigned
 
 # TUPLE SYNTAX parenthesis (1,2,3)
 print(' tuples are very similar to lists, however, unlike lists they are immutable meaning they can not be changed')
@@ -9,11 +11,13 @@ print('len(t)')
 print(len(t))
 t = ('one', 2, 'one')
 print(t)
-print("t.index('one')")
+#! TUPLE METHODS
+# *count and index
+print("\nt.index('one')")
 print(t.index('one'))
 print("\nt.count('one') ---> COUNT TOTAL IN INDEX")
 print(t.count('one'))
-# IMMUTABLE
+#! IMMUTABLE
 print('\nIMMUTABLE')
 print("\nt[0]= 'change'")
 print('ERROR')

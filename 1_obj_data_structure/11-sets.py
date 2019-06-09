@@ -1,4 +1,5 @@
-# SETS are unordered collections of UNIQUE elements
+# SETS
+# ! UNORDERED collections of UNIQUE elements
 print('Sets are an UNORDERED collection of unique elements.\n CANT HAVE TWO OF SAME ELEMENTS \nWe can construct them by using the set() function.')
 print("x=set()")
 x = set()

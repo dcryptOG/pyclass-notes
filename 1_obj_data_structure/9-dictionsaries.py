@@ -19,7 +19,7 @@ print(
 
 print('SYNTAX dict[key][value]')
 
-# *Ex create dict with IMMUTABLE VALUE
+#!Ex create dict with IMMUTABLE VALUE
 print('\n CREATE DICT w/ IMMUTABLE KEYS')
 keys = {'a', 'e', 'i', 'o', 'u'}
 value = 'vowel'
@@ -60,14 +60,15 @@ print(d['key1']['nestkey']['subnestkey'])
 # NESTING DICTIONARIES
 print('\n3 NESTING DICTIONARIES\n')
 
-# BASIC DICTIONARY METHODS
 print('\n4 BASIC DICTIONARY METHODS\n')
-# DICTIONARIES MUTABLE SO ITEMS CAN BE ADDED
-print('DICTIONARY MUTABLE SO ITEMS ADDED')
-print('ADD KEY VALUE PAIRS')
+
+#! DICTIONARIES MUTABLE SO ITEMS CAN BE ADDED
+
+print('\nDICTIONARY MUTABLE SO ITEMS ADDED')
+print('\nADD KEY VALUE PAIRS')
 d = {'k1': 100, 'k2': 200}
 print(d)
-print('ADD ITEM TO DICTIONARY')
+print('\nADD ITEM TO DICTIONARY')
 print('d[k3]=300')
 d['k3'] = 300
 print(d)
@@ -77,7 +78,9 @@ print("d['k1']='NEW VALUE'")
 print(d)
 # SEE ALL KEYS
 
-print('d.keys()')
+#! BASIC DICTIONARY METHODS
+
+print('DICTIONARY METHODS\nd.keys()')
 print(d.keys())
 d.values()
 d.items()

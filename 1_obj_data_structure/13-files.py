@@ -6,6 +6,7 @@ print('Python has a built-in open function that allows us to open and play with 
 print('\n SYNTAX \n r = read mode \n w = write mode \n a = appending mode \n r+ = special read and write mode \n mode w+ = for writing and readin')
 #!open() WRITE FILE PYTHON
 #! w can OVERWRITE EXISTING FILE or CREATE NEW
+
 print('\n file = open("testfile.txt", "w"')
 file = open('testfile.txt', 'w')
 file.write('Hello World')
@@ -14,12 +15,13 @@ file.write('\nThis is our new text file')
 # can also use file.writelines() METHOD
 file.close()
 print('file.close()')
+
 # READ FILE
 print('\n file=open("testfile.txt", "r"')
 file = open('testfile.txt', 'r')
 print(file.read())
 # print(file.read(3))
-print('RESET TO REREAD FILE file.seek(0)')
+print('\nRESET TO REREAD FILE file.seek(0)')
 # RESESETS TO REREAD FILE
 file.seek(0)
 print(file.read())
@@ -31,7 +33,7 @@ file.close
 
 # WITH STATEMENT
 # NO NEED TO CLOSE
-print('WITH STATEMENT')
+print('\nWITH STATEMENT')
 with open('testfile.txt', 'r') as my_file:
     contents = my_file.read()
 print(contents)
