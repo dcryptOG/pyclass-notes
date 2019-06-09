@@ -1,10 +1,23 @@
 # PYTHON ONLY ACCURATE FOR 53 BITS,
 x = 0.1 + 0.2
 print(x)
-print('x = str(round(x, 2))\n ROUND DECIMAL')
+# answer is 0.30000000000000004
+#! PYTHON FAILS AFTER 17 DECIMALS
+
+print('\nx = str(round(x, 2))\n ROUND DECIMAL')
 x = str(round(x, 2))
 print(x)
-# answer is 0.30000000000000004
-# PYTHON FAILS AFTER 17 DECIMALS
-# LINK https://docs.python.org/2/tutorial/floatingpoint.html
-# SEE str.round() method
+print(type(x))
+
+print('\n')
+print('"%0.2f" % num')
+a = 0.1 + 0.2
+print("%.1f" % a)
+
+print('\n')
+print('{:0.1f}'.format(a))
+
+# : introduces the format spec
+# 0 enables sign-aware zero-padding for numeric types
+# .2 sets the precision to 2
+# f displays the number as a fixed-point number

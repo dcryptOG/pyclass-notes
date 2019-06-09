@@ -1,17 +1,36 @@
-# use underscore no symbos in var
-# use lowercase
+#! PEP8 use lowercase no caps
+#! Python uses SNAKE CASE _underscore
+# * CAPS for GLOBAL VAR
+
+# ? Avoid using kw or keywords like
+# ie str is reserved
+# * There are 33 keywords in Python 3.3. This number can vary slightly in course of time.
+# python keywords are case senstive
+
+
+#! DYNAMIC TYPING - can reassign variables to differnt data types
+# * other languages are Statically Typed
+
+# ? EX value of a can be changed
+
+a = 5
+print(a + a)
+a = 10
+print(a + a)
+
 num_x = 2
 print(num_x)
-# DYNAMIC TYPING def: you can reaassign variable to different data types
-# making Python different thanother languages that are STATICALLY-TYPED
-print('VAR SYNTAX SNAKE CASE')
+
+
+print('\nVAR SYNTAX SNAKE CASE')
 my_dogs = 2
 print(my_dogs)
 my_dogs = ["Sammy", "Frankie"]
 print(my_dogs)
-# THIS IS OKAY IN PYTHON
-# MAY RESULT IN BUGS FOR UNEXPECTED DATATYPES
-# be aware of type()
+
+
+#!  be aware of type() in python to avoid bugs
+
 print(type(my_dogs))
 
 my_income = 100
@@ -19,17 +38,8 @@ tax_rate = 0.1
 my_taxes = my_income * tax_rate
 print(my_taxes)
 
-# Python Keywords
 
-# Keywords are the reserved words in Python.
-
-# We cannot use a keyword as variable name, function name or any other identifier. They are used to define the syntax and structure of the Python language.
-
-# In Python, keywords are case sensitive.
-
-# There are 33 keywords in Python 3.3. This number can vary slightly in course of time.
-
-# All the keywords except True, False and None are in lowercase and they must be written as it is. The list of all the keywords are given below.
+#! All the keywords except True, False and None are in lowercase and they must be written as it is. The list of all the keywords are given below.
 # Keywords in Python programming language False 	class 	finally 	is 	return
 # None 	continue 	for 	lambda 	try
 # True 	def 	from 	nonlocal 	while
@@ -38,18 +48,16 @@ print(my_taxes)
 # assert 	else 	import 	pass
 # break 	except 	in 	raise
 
-# Looking at all the keywords at once and trying to figure out what they mean might be overwhelming.
+#! Python Identifiers
 
-# If you want to have an overview, here is the complete list of all the keywords with examples.
-# Python Identifiers
-
-# Identifier is the name given to entities like class, functions, variables etc. in Python. It helps differentiating one entity from another.
-# Rules for writing identifiers
+#! Identifier is the name given to entities like class, functions, variables etc. in Python. It helps differentiating one entity from another.
+# * Rules for writing identifiers
 
 #     Identifiers can be a combination of letters in lowercase (a to z) or uppercase (A to Z) or digits (0 to 9) or an underscore (_). Names like myClass, var_1 and print_this_to_screen, all are valid example.
-#     An identifier cannot start with a digit. 1variable is invalid, but variable1 is perfectly fine.
-#     Keywords cannot be used as identifiers.
 
+#     An identifier cannot start with a digit. 1variable is invalid, but variable1 is perfectly fine.
+
+# todo     Keywords cannot be used as identifiers.
 
 #     >>> global = 1
 #       File "<interactive input>", line 1
@@ -68,23 +76,17 @@ print(my_taxes)
 
 #     Identifier can be of any length.
 
-# Things to care about
-
 # Python is a case-sensitive language. This means, Variable and variable are not the same. Always name identifiers that make sense.
-
-# While, c = 10 is valid. Writing count = 10 would make more sense and it would be easier to figure out what it does even when you look at your code after a long gap.
-
-# Multiple words can be separated using an underscore, this_is_a_long_variable.
-
-# We can also use camel-case style of writing, i.e., capitalize every first letter of the word except the initial word without any spaces. For example: camelCaseExample
 
 # What is Name in Python?
 
 # If you have ever read 'The Zen of Python' (type "import this" in Python interpreter), the last line states, Namespaces are one honking great idea -- let's do more of those! So what are these mysterious namespaces? Let us first look at what name is.
 
-# Name (also called identifier) is simply a name given to objects. Everything in Python is an object. Name is a way to access the underlying object.
+#! Name (also called identifier) is simply a name given to objects. Everything in Python is an object. Name is a way to access the underlying object.
 
-# For example, when we do the assignment a = 2, here 2 is an object stored in memory and a is the name we associate it with. We can get the address (in RAM) of some object through the built-in function, id(). Let's check it.
+# For example, when we do the assignment a = 2, here 2 is an object stored in memory and a is the name we associate it with.
+#
+# todo                                  Get the address (in RAM) of some Object through the built-in function, id(). Let's check it.
 
 # Note: You may get different value of id
 
