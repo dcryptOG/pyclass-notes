@@ -12,12 +12,12 @@ print(type(x))
 print('\n')
 print('"%0.2f" % num')
 a = 0.1 + 0.2
-print("%.1f" % a)
+print("%.2f" % a)
 
 print('\n')
-print('{:0.1f}'.format(a))
+print('{:0.2f}'.format(a))
 
 # : introduces the format spec
-# 0 enables sign-aware zero-padding for numeric types
+# * 0 enables sign-aware zero-padding for numeric types TOO MANY HAS WHITE SPACE
 # .2 sets the precision to 2
 # f displays the number as a fixed-point number

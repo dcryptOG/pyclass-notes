@@ -2,38 +2,42 @@
 #name[0] = 'P'
 # error
 
-# STRINGS IMMUTABLE cannot reassign letter
+#! STRINGS IMMUTABLE cannot reassign letter
 
-# concat 2 steps
+# ? concat 2 steps
 name = "Sam"
-# 1. REASSIGN VARAIBLE
+
+# * 1. REASSIGN VARAIBLE
 last_letters = name[1:]
 print(last_letters)
-# 2. CONCAT
+
+# * 2. CONCAT
 print('P' + last_letters)
 
-# ex 2  CONCAT
-
+# todo EX2  CONCAT
+print('\n')
 x = 'Hello World'
 x = x + " it is beautiful outside!"
 print(x)
 
-# string multiplcation
+#!STRING MULTIPLICATION
 
+print('\nEX String multiplcation')
 letter = 'z'
 print('letter*10')
 print(letter*10)
 
-# USEFUL METHODS
+#! USEFUL METHODS
 
-# UPPER METHOD
+# * UPPER METHOD
 x = 'Hello Word'
-print('x.upper()')
+print('\nSTING METHODS')
+print('\nx.upper()')
 print(x.upper())
-print('x.lower()')
+print('\nx.lower()')
 print(x.lower())
 
-# STRING METHOD converts a string to a list
+#! SPLIT METHOD converts a STRING into a LIST
 x = 'Hi this is a string'
 print('\nSPLIT METHOD')
 print('x')

@@ -19,6 +19,11 @@ print('hello\nslicing ex\n hello[1]')
 print('hello'[1])
 print('INDEXING STARTS AT 0\n')
 
+
+#! ESCAPE SEQUENCE -- \n
+#! TAB SEQEUNCE -- \t
+
+print('EX TAB SEQUENCE')
 sen = "I'm going on a \trun "
 print(sen)
 print(len("I am"))

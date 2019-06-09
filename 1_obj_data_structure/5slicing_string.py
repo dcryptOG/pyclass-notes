@@ -14,11 +14,12 @@ print(abc[::-1])
 print('\n')
 print('INPUT: abc[2:], abc[:3], abc[5:8]')
 print('OUTPUT', abc[2:], '\n', abc[:3], abc[5:8])
+print(':stop -- up to BUT NOT including thus abc[:3] does not include d\n')
 #! Indexing starts at 0
 
 print('abc[::], abc[::2], abc[::3]')
 print(abc[::], abc[::2], abc[::3])
 test = 'tinker'
-'whatdafuk'[1:4]
+print('whatdafuk'[1:4])
 print('\ntinker'[1:4], test[1:4])
 # step size can be negative as well, reverses string

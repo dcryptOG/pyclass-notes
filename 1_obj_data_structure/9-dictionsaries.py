@@ -1,16 +1,14 @@
-# DICTIONARIES def: unordered mappings for storing objectes
-# key-value pair allows users to quckly grab objects without needing to know an index loction
-
-# DICTIONAIRES UNORDERED CANNOT BE SORTED
-
-# vs LISTS objects retrieved by location.
-# Lists can be INDEXED OR SLICED
+# DICTIONARIES
+# #!UNORDERED mappings for storing objectes
+#! MUTABLE
+#! key-value pair access objects
 
 # DICTIONARY SYNTAX (JSON)
 # {''KEY1':VALUE1','KEY2':''VALUE2}
 ##
 print('DICTIONARIES\n')
-# CONSTRUCTING A DICTIONARY
+#! CONSTRUCTING A DICTIONARY
+
 print('1 CONSTRUCTING A DICTIONARY\n')
 print("\nSYNTAX DICTIONARY  = {'key1':'value1','key2':'value2'}\n")
 my_dict = {'key1': 123, 'key2': [12, 23, 33],
@@ -21,6 +19,28 @@ print(
 
 print('SYNTAX dict[key][value]')
 
+# *Ex create dict with IMMUTABLE VALUE
+print('\n CREATE DICT w/ IMMUTABLE KEYS')
+keys = {'a', 'e', 'i', 'o', 'u'}
+value = 'vowel'
+
+vowels = dict.fromkeys(keys, value)
+print(vowels)
+
+# * EX create dict with mutable keys & DICT COMPREHENSION
+print('\n create dict w/ MUTABLE KEYS using DICT COMPREHENSION')
+keys = {'a', 'e', 'i', 'o', 'u'}
+value = [1]
+
+vowels = {key: list(value) for key in keys}
+# you can also use
+# vowles = { key : value[:] for key in keys }
+print(vowels)
+
+# * updating the value
+value.append(2)
+print(vowels)
+# TODO append doesn't update all values
 
 # ACCESSING OBJECT IN DICTIONARY
 print('\n2 ACCESSING OBJ FROM DICTIONARY\n')
