@@ -1,5 +1,5 @@
 # while Loops
-# while statement will repeatedly execute a single statement or group of statements as long as the condition is true.
+#! while statement will repeatedly execute a single statement or group of statements as long as the condition is True.
 
 # Program to iterate through a list using indexing
 
@@ -66,15 +66,18 @@ else:
     print('ALL DONE')
 
 # BREAK CONTINUE PASS
-print('\n creak continue pass')
-# BREAK breaks out of the current closest enclosing loop
-# CONTINUE: goes to the top of the closest enclosing loop
-# pass: does nothing... results NO OPERATION (NOP).
-print('break: breaks out of the current closest enclosing loop')
+print('\n Break continue pass')
+#! BREAK breaks out of the current closest enclosing loop SKIPS ELSE
+
+#! CONTINUE: goes to the Top of the closest enclosing loop
+
+# * pass: does nothing... results NO OPERATION (NOP).
+
+print('\nbreak: breaks out of the current closest enclosing loop')
 print('continue: re-iterates TOP of enclosing loop')
 print('pass: Does nothing at all')
 
-# GENERAL SYNTAX
+#! GENERAL SYNTAX
 # while test:
 #     code statement
 #     if test:
@@ -83,7 +86,7 @@ print('pass: Does nothing at all')
 #         continue
 # else:
 
-# IF ELSE CONTINUE
+#! IF ELSE CONTINUE
 y = [1, 2, 3]
 
 for item in y:

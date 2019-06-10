@@ -31,7 +31,7 @@ if hungry:
 else:
     print("I'm not hungry")
 
-# MULTIPLE BRANCHES
+#! ELIF multiple branches
 # loc stand for location
 print('\n')
 loc = 'Bank'
