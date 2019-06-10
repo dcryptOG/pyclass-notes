@@ -1,44 +1,9 @@
-# Statements C++
-
-# if (a>b) {
-#   a = 2;
-#   b = 4;
-# }
-
-# PYTHON statements
-
-# if a > b:
-#     a = 2
-#     b = 4
-
-# PYTHON USES WHITESPACE
-# PYTHON USES COLON
-
-# Other Languages
-
-# if (x)
-#     if(y)
-#         code-statement;
-# else
-#     another-code-statement;
-
-# if x:
-#     if y:
-#         print('hello')
-# else:
-#     print('bye')
-
 # =======================================================
-# if, elif, else Statements
+#! if, elif, else Statements
 
-# CONTROL FLOW = use logic for async code execution
-
-# if Statements in Python tellS the computer to perform alternative actions based on a certain set of results.
+# * CONTROL FLOW = use logic for async code execution
 
 # elif and else statements, which allow us to tell the computer:
-
-# "Hey if this case happens, perform some action. Else, if another case happens, perform some other action. Else, if none of the above cases happened, perform this action."
-
 
 # if case1:
 #     perform action1
@@ -60,7 +25,7 @@ print('/n')
 if 3 > 2:
     print("It's True!")
 #
-hungry = False
+hungry = True
 if hungry:
     print('FEED ME!')
 else:
