@@ -214,8 +214,8 @@ def extra(str):
 
 print(extra('MMMiiissssssiiippppppiii'))
 
-st = 'hello'
-print(''.join([st[st.index(c)]*3 for c in st]))
+cs = 'hello'
+print(''.join([c*3 for c in cs]))
 # paper_doll('Hello')
 
 # paper_doll('Mississippi')
