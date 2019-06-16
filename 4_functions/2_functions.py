@@ -4,10 +4,11 @@
 
 # Types of Functions
 
-# 2 two types:
+# todo                    2 two types of FUNCTIONS:
 
-#     * Built-in functions - Functions that are built into Python.
-#     * User-defined functions - Functions defined by the users themselves.
+#! BUILT-IN FUNCTIONS - Functions that are built into Python.
+
+#!USER-DEFINED FUNCTIONS - Functions defined by the users themselves.
 
 # So what is a function?
 
@@ -17,17 +18,29 @@
 
 # Above shown is a function definition which consists of following components.
 
-#     ? Keyword DEF marks the start of function header.
-#     A function name to uniquely identify it. Function naming follows the same rules of writing identifiers in Python.
+#!FUNCTION SYNTAX
+#! def name_of_function(parameters):
+#!    """docstring"""
+#!    function body(one or more statements)
+
+# ? Keyword DEF marks the start of function header.
+# * name_of_function(PARAMETERS):
+# A function name to uniquely identify it.
+# FUNCT NAME follows the SAME RULES of writing IDENTIFIERS in Python.
 #     ? PARAMETERS (ARGUMENTS) through which we pass values to a function. OPTIONAL.
+
 #     ! ARGUMENTS can be used in a function and referenced within the function
 #     ! A COLON (:) @ end of function header.
-#    ?  Optional DOCUMENTATION STRING (DOCSTRING) to describe what the function does.
-#     *FUNCTION BODY = one or more statements
-#     Statements must have same indentation level (usually 4 spaces).
-#     An optional return statement to return a value from the function.
 
-# EX1
+# TODO  Optional DOCUMENTATION STRING (DOCSTRING) to describe what the function does.
+
+# *FUNCTION BODY = one or more statements
+
+#     Statements must have same indentation level (usually 4 spaces).
+
+#     An optional RETURN STATEMENTS to output/return a value from the function.
+
+#! EX1
 
 # Let's see how to build out a function's syntax in Python. It has the following form:
 
@@ -88,7 +101,7 @@ print('\nreturn [expression_list]')
 # If there is NO EXPRESSION in the statement OR the NO RETURN STATEMENT inside a function,
 #  ? THEN the function will return the NONE object.
 
-# Example 1: A simple print 'hello' function
+#! Example 2: A simple print 'hello' function
 print('EX2\ndef say_hello():\n    print("hello")')
 
 
@@ -102,7 +115,7 @@ say_hello()
 
 # output: hello
 
-# Example 3: A simple greeting function
+#! Example 3: A simple greeting function
 
 # Let's write a function that greets people with their name.
 
@@ -118,8 +131,10 @@ greeting()
 
 # Using return
 
-# Let's see some example that use a return statement. return allows a function to return a result that can then be stored as a variable, or used in whatever manner a user wants.
-# Example 4: Addition function
+# Let's see some example that use a return statement.
+#  return allows a function to return a result that can then be stored as a variable, or used in whatever manner a user wants.
+
+#! Example 4: Addition function
 print('\nEX4\ndef add_num(num1, num2):\n    return num1+num2')
 
 

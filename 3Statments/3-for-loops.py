@@ -50,7 +50,6 @@ print('\n')
 
 #! Program to iterate through a list using indexing
 
-
 print('EX for loop used with range')
 genre = ['pop', 'rock', 'jazz']
 

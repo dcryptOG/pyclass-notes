@@ -70,3 +70,13 @@ print("output: ", mylist)
 print("\nmylist = [x*y for x in [2,4,6] for y in [1,10,1000]]")
 mylist = [x*y for x in [2, 4, 6] for y in [1, 10, 1000]]
 print("output: ", mylist)
+
+# for x in range(1, 101):
+#     if x % 3 == 0 and x % 5 == 0:
+#         print("Fizz Buzz")
+#     elif x % 3 == 0 and x % 5 != 0:
+#         print('Fizz')
+#     elif x % 3 != 0 and x % 5 == 0:
+#         print('Buzz')
+#     else:
+#         print(x)

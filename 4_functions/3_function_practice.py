@@ -20,15 +20,15 @@ print(even_odds(3, 9))
 test_string = 'Hello you'
 
 
-def str_two(st):
-    words = st.split()
-    if words[0][0].lower() == words[1][0].lower():
-        return True
-    else:
-        return False
+# def str_two(st):
+#     words = st.split()
+#     if words[0][0].lower() == words[1][0].lower():
+#         return True
+#     else:
+#         return False
 
 
-print('What', str_two('fuck Fuck'))
+# print('What', str_two('fuck Fuck'))
 
 
 def animal_crackers(text):
@@ -47,6 +47,10 @@ print(animal_crackers('fuck Fuck'))
 
 # animal_crackers('Crazy Kangaroo')
 
+
+def twentys(x1, x2):
+    nums = [x1, x2]
+    return sum(nums) == 20 or 20 in nums
 # MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. If not, return False
 
 
@@ -73,8 +77,14 @@ print(add(10, 20))
 
 # makes_twenty(2,3)
 
+
+def yodaz(init):
+    words = init.split()
+    return ' '.join(words[::-1])
+
 # LEVEL 1 PROBLEMS
 # OLD MACDONALD: Write a function that capitalizes the first and fourth letters of a name
+
 
 st = 'helloyou'
 
@@ -100,7 +110,6 @@ print(caps(st))
 # sen = 'I am home'
 
 # words = sen.split()
-
 
 # new = words.pop()
 
@@ -143,10 +152,7 @@ print(yoda('I am home'))
 
 
 def almost(n):
-    if abs(n) in range(90, 111) or range(190, 211):
-        return True
-    else:
-        return False
+    return abs(n) in range(90, 111) or abs(n) in range(190, 211)
 
 
 def almost_there(n):
@@ -177,13 +183,12 @@ def has_33(nums):
         # nicer looking alternative in commented code
         # if nums[i] == 3 and nums[i+1] == 3:
 
-        if nums[i:i+2] == [3, 3]:
-            return True
-
-    return False
+        return nums[i:i+2] == [3, 3]
+# * i+2 because it stops @ but doesn't include i+2
 
 
-print(adj3([3, 1, 2, 3, 3, 4, 5]), 'nice')
+print(adj3([3, 1, 2, 3, 3]), 'nice')
+
 
 #     x = lst.index()
 # i for i in enumerate(lst):
@@ -209,6 +214,8 @@ def extra(str):
 
 print(extra('MMMiiissssssiiippppppiii'))
 
+st = 'hello'
+print(''.join([st[st.index(c)]*3 for c in st]))
 # paper_doll('Hello')
 
 # paper_doll('Mississippi')
