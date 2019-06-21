@@ -11,26 +11,37 @@
 import string
 
 
-def vol(rad):
-    return (4/3)*(3.14)*(rad**3)
+import string
+import math
 
 
-print(vol(2))
+def vol_sphere(rad):
+    return round(((4/3)*(math.pi)*(rad**3)), 2)
+
+
+print(vol_sphere(2))
+
+
+def vol_sphere2(rad):
+    # return '{:0.2f}'.format((4/3)*(math.pi)*(rad**3))
+    return "%.2f" % ((4/3)*(math.pi)*(rad**3))
+
+
+print(vol_sphere2(2))
+
 
 #! Write a function that checks whether a number is in a given range (inclusive of high and low)
-# In [3]:
-
 
 def ran_check(num, low, high):
     if low < num < high:
-        return f"{num} is in the range between {low} and {high}"
+        return f'{num} is in the range between {low} and {high}'
     else:
-        return f"{num} is in not the range between {low} and {high}"
-
-# In [4]:
+        return f'{num} is outside the range {low} and {high}'
 
 
-# # Check
+print(ran_check(3, 1, 10))
+
+
 print(ran_check(5, 2, 7))
 
 # 5 is in the range between 2 and 7
@@ -47,10 +58,7 @@ print(ran_check(5, 2, 7))
 
 
 def ran_bool(num, low, high):
-    if low < num < high:
-        return True
-    else:
-        return False
+    return low < num < high
 
 
 print(ran_bool(3, 1, 10))
@@ -66,8 +74,24 @@ print(ran_bool(3, 1, 10))
 
 # ? HINT: Two string methods that might prove useful: .isupper() and .islower()
 
-# If you feel ambitious, explore the Collections module to solve this problem!
-# In [7]:
+# No. of Upper case characters : 4
+# No. of Lower case Characters : 33
+s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
+print([c for c in s if c.isupper()])
+print([c for c in s if c.islower()])
+
+
+def up_low(s):
+    return f'No. of upper case: {len(list(filter(lambda x: x.isupper(), s)))}\n No. of lower case: {len(list(filter(lambda x: x.islower(), s)))}'
+
+# *filter() faster? check process time
+
+
+def up_low_2(s):
+    return f'No. of upper case: {len([c for c in s if c.isupper()])} \n No. of lower case: {len([c for c in s if c.islower()])}'
+
+
+print(up_low_2('Hello Mr. Rogers, how are you this fine Tuesday?'))
 
 
 # def up_low(s):
@@ -81,7 +105,7 @@ print(ran_bool(3, 1, 10))
 #     return "Totall upper {} total lower {}".format(up, low)
 
 
-def up_low(s):
+def up_low_3(s):
     d = {"upper": 0, "lower": 0}
     for c in s:
         if c.isupper():
@@ -90,10 +114,10 @@ def up_low(s):
             d["lower"] += 1
         else:
             pass
+    return d
 
 
-s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
-print(up_low(s))
+print(up_low_3('Hello Mr. Rogers, how are you this fine Tuesday?'))
 
 # Original String :  Hello Mr. Rogers, how are you this fine Tuesday?
 # No. of Upper case characters :  4
@@ -119,11 +143,9 @@ print(unique_list(lst1))
 #         if a not in x:
 #             x.append(a)
 #     return x
-# In [10]:
 
 # unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
 
-# Out[10]:
 
 # [1, 2, 3, 4, 5]
 
@@ -132,10 +154,17 @@ print(unique_list(lst1))
 # Sample List : [1, 2, 3, -4]
 # Expected Output : -24
 
-# In [11]:
+def multiply(numbers):
+    return list(map(lambda x: x*2, numbers))
+#     pass
 
 
-def multiply(nums):
+print(multiply([1, 4, 5, -3]))
+
+print(multiply([1, 2, 3, -4]))
+
+
+def multiply_2(nums):
     total = 1
     for x in nums:
         total *= x
@@ -143,23 +172,13 @@ def multiply(nums):
 
 
 nums = [1, 2, 3, 4]
-print(multiply([1, 2, 3, 4]))
+print(multiply_2([1, 2, 3, 4]))
 
 
 # ! Write a Python function that checks whether a passed in string is palindrome or not.
 
 # Note: A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.
-# In [13]:
 
-
-# ! def palindrome(s):
-#     if s[::-1] == s:
-#         return True
-#     else:
-#         return False
-# !OR
-# def palindrome(s):
-#         return s == s[::-1]
 
 def palindrome(s):
 
@@ -170,8 +189,14 @@ def palindrome(s):
 
 print(palindrome('helleh'))
 
-# Out[14]:
 
+def palindrome_2(s):
+    table = str.maketrans(dict.fromkeys(' .!#&,'))
+    return s.translate(table) == s[::-1].translate(table)
+
+
+print(palindrome('helleh'))
+print(palindrome('nurses run'))
 # True
 
 # Hard:
@@ -185,32 +210,56 @@ print(palindrome('helleh'))
 
 # * try without making list and sort
 
+# *help(string)
 
-# def ispangram(str1, alphabet=string.ascii_lowercase):
-#     lst = set(str1.lower())
-#     str = ''.join(lst).lower()
-#     abc = set(alphabet)
-#     if lst <= abc:
-#         return True
-#     else:
-#         return f'False {lst} vs/n ------ {abc}'
+# * string.ascii_lowercase
+# * 'abcdefghijklmnopqrstuvwxyz'
+
+# If you really need a list:
+
+# *list(string.ascii_lowercase)
+# ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# And to do it with range
+
+abcs = list(map(chr, range(97, 123)))
+abcs_2 = list(map(chr, range(ord('a'), ord('z')+1)))
+
+# Note : Pangrams are words or sentences containing every letter of the alphabet at least once.
+# For example : "The quick brown fox jumps over the lazy dog"
+
+# Hint: Look at the string module
+
+# import string
 
 
 def ispangram(str1, alphabet=string.ascii_lowercase):
-    alphaset = set(alphabet)
-    return alphaset <= set(str1.lower())
+    table = str.maketrans(dict.fromkeys(' .'))
+    return list(alphabet) == sorted(set(str1.translate(table).lower()))
+# *could also use len() instead of sorted
 
 
-print(ispangram('abcdefghijklmnopqrstuvwxyz'))
-print(ispangram('The quick brown fox jumps over the lazy dog'))
-# Out[16]:
+print(ispangram("The quick brown fox jumps over the lazy dog"))
 
+
+def is_pangram_2(sentence):
+    lookup = [0] * 26
+    sentence = sentence.lower()
+    for char in sentence:
+        if 'a' <= char <= 'z':
+            index = ord(char) - ord('a')
+            lookup[index] += 1
+    # All function checks and returns True only if all the elements in the
+    # given array is 'Truthy'. Here, 0 will be evaluated as 'Falsy' and any
+    # occurrance greater than 0 will evaluate as 'Truthy'
+    return f'{all(lookup)} has {len(lookup)}'
 # True
 
-# In [17]:
 
+print(is_pangram_2("The quick brown fox jumps over the lazy dog"))
 # string.ascii_lowercase
 
-# Out[17]:
 
 # 'abcdefghijklmnopqrstuvwxyz'
+print(ispangram('abcdefghijklmnopqrstuvwxyz'))
+print(ispangram('The quick brown fox jumps over the lazy dog'))

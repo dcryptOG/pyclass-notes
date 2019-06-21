@@ -51,28 +51,37 @@ print(doubles(3))
 
 # todo ============ EX filter() ===================
 
-# ? The filter() function takes in a FUNCTION and a LIST as ARGS.
+#! The filter() function takes in a FUNCTION and a LIST as ARGS.
+
+# * contains items for which the function evaluats to True.
 
 # The function is called with all the items in the list
 
 # NEW list is returned
-# * contains items for which the function evaluats to True.
 
 # Here is an example use of filter() function to filter out only even numbers from a list.
 
 # Program to filter out only the even items from a list
+
+#!EX 1 FILTER CEHCK EVEN
 
 my_list = [1, 5, 4, 6, 8, 11, 3, 12]
 
 new_list = list(filter(lambda x: (x % 2 == 0), my_list))
 
 # Output: [4, 6, 8, 12]
-print('\nEX filter() ', new_list)
+print('\nEX list(filter(lambda x: (x % 2 == 0), my_list))\n', new_list)
+
+new_lst = list(map(lambda x: (x % 2 == 0), my_list))
+
+print('\nvs.\tlist(map(map(lambda x:x%2==0))\n', new_lst)
 
 # todo ===============EX map() =====================
 
-# ? The map() function takes in a FUNCTION AND a LIST as ARGS.
+#! The map() function takes in a FUNCTION AND a LIST as ARGS.
 
+
+#! MAP ALLOWS TO PASS A LIST AS ARGUMENT WITHOUT A FOR LOOP
 # The function is called with all the items in the list
 
 # NEW list is returned
@@ -85,16 +94,15 @@ print('\nEX filter() ', new_list)
 
 # Program to double each item in a list using map()
 
+
+#!EX2 SQUARE/*2 A LIST OF NUMBERS
+
 my_list = [1, 5, 4, 6, 8, 11, 3, 12]
 
 new_list = list(map(lambda x: x * 2, my_list))
 
 # Output: [2, 10, 8, 12, 16, 22, 6, 24]
 print('\nEX map() ', new_list)
-
-# ! PYTHON CLASS ##########################
-
-# map function
 
 
 def square(num):
@@ -115,9 +123,12 @@ print('\nEX2\nlist(map(square, my_nums))\n ', list(map(square, my_nums)))
 
 # [1, 4, 9, 16, 25]
 
-#! ERROR W/ square() ---x--- list(map(square(), my_nums))
+# ? ERROR W/ square() ---x--- list(map(square(), my_nums))
+
 # *Map will execute function, so no need ()
 
+
+#!EX3
 
 def splicer(mystring):
     if len(mystring) % 2 == 0:
@@ -128,7 +139,6 @@ def splicer(mystring):
 
 mynames = ['John', 'Cindy', 'Sarah', 'Kelly', 'Mike']
 
-
 print('\nEX3 map() ', list(map(splicer, mynames)))
 
 # ['even', 'C', 'S', 'K', 'even']
@@ -136,7 +146,9 @@ print('\nEX3 map() ', list(map(splicer, mynames)))
 #!=============== filter function===================
 
 # * filter() RETURNS an ITERATOR yielding those ITEMS of ITERABLE for which FUNCTION(ITEM) is True.
+
 # ? Must filter by FUNC that RETURNS either True OR False.
+
 # Then... passing that into filter (along with your iterable) you ONLY get the results that RETURN True when passed to the function.
 
 

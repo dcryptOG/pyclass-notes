@@ -213,7 +213,8 @@ def extra(str):
 
 print(extra('MMMiiissssssiiippppppiii'))
 
-cs = 'hello'
+cs = 'mississippi'
+
 print(''.join([c*3 for c in cs]))
 
 # paper_doll('Hello')
