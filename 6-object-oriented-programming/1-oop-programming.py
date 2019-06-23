@@ -1,17 +1,25 @@
 
 #! Object Oriented Programming
 
-# *OOP create your own Objects w/ own methods and attributes
+# *OOP create your own:
+#!  Objects w/
+# *METHODS and ATTRIBUTES
+
+# ? OOP allows to reate code thatis repeatable and organized
 
 #!OOP KEYWORDS
 
-# ? class to create own object types
+#! CLASS - to create own object types
 
-# ? self keyword to creae attributes and methods
+#! SELF - keyword to creae attributes and methods
 
-# todo below __init__ method to attributres
-# *def __init__(self, args):
-#    self.attribute = attributes
+# todo SYNTAX
+#! class NameOfClass():
+# *special method NOT function
+# ?self kw used signify that this is method not a function
+#! def __init__(self,param1,param2):
+#!    self.param1 = self.param1
+# *self.attribute = self.attribute
 
 # todo create methods
 # def method(self)
