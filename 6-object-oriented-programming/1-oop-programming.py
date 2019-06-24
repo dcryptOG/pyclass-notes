@@ -1,62 +1,6 @@
 
 #! Object Oriented Programming
 
-# *OOP create your own:
-#!  Objects w/
-# *METHODS and ATTRIBUTES
-
-# ? OOP allows to reate code thatis repeatable and organized
-
-#!OOP KEYWORDS
-
-#! CLASS - to create own object types
-
-#! SELF - keyword to creae attributes and methods
-
-# todo SYNTAX
-#! class NameOfClass():
-# *special method NOT function
-# ?self kw used signify that this is method not a function
-#! def __init__(self,param1,param2):
-#!    self.param1 = self.param1
-# *self.attribute = self.attribute
-
-# todo create methods
-# def method(self)
-
-
-# todo CLASS USES CAMEL CASE SYNTAX
-
-
-class Car(object):
-    """blueprint for car"""
-# ? __INIT__ == INSTANCE
-
-    def __init__(self, model, color, company, speed_limit):
-        self.color = color
-        self.company = company
-        self.speed_limit = speed_limit
-        self.model = model
-
-    def start(self):
-        print('started')
-
-    def stop(self):
-        print('stopped')
-
-    def accellerate(self):
-        print('accelerating')
-
-    def change_gear(self):
-        print('gear changed')
-
-
-maruthi_suzuki = Car("ertiga", "black", "suzuki", 60)
-audi = Car("A6", "red", "audi", 80)
-
-
-# For this lesson we will construct our knowledge of OOP in Python by building on the following topics:
-
 #     Objects
 #     Using the class keyword
 #     Creating class attributes
@@ -73,27 +17,15 @@ lst = [1, 2, 3]
 
 lst.count(2)
 
+# *OOP create your own:
+#!  Objects w/
+# *METHODS and ATTRIBUTES
 
-def checkin(ex):
-    return sum(i for i in ex)
-    # for i in ex:
-    #     i += i
-    # return i
-
-
-def mult(nums):
-    return eval('*'.join(map(str, nums)))
-
-
-print(mult([1, 2, 3]))
-# 1
-
+# ? OOP allows to reate code thatis repeatable and organized
 
 #! Objects
 
 # In Python, everything is an object.
-
-# ? use type() to check the type of object something is:
 
 print(type(1))
 print(type([]))
@@ -104,14 +36,6 @@ print(type({}))
 # <class 'list'>
 # <class 'tuple'>
 # <class 'dict'>
-
-# User defined objects are created using the class keyword. The class is a blueprint that defines the nature of a future object.
-
-# From classes we can construct instances.
-
-# An instance is a specific object created from a particular class.
-
-# For example, above we created the object lst which was an instance of a list object.
 
 # Let see how we can use class:
 
@@ -127,12 +51,52 @@ x = Sample()
 
 print(type(x))
 
-# <class '__main__.Sample'>
+# * <class '__main__.Sample'>
 
 # Note how x is now the reference to our new instance of a Sample class.
 # In other words, we instantiate the Sample class.
 
-# For example, we can create a class called Dog.
+#!OOP KEYWORDS
+
+# todo SYNTAX
+#! class NameOfClass():
+
+#! CLASS = kw used to create USER-DEFINED OBJECT types
+
+# From classes we can construct instances.
+
+# An instance is a specific object created from a particular class.
+
+#! INSTANCE def__init__ = is a SPECIFIC OBJECT created from a CLASS
+
+# *special method NOT function
+
+#! METHODS = functions defined IN the BODY of a CLASS.
+# ? METHODS used to perform operations with the ATTRIBUTES of our OBJECTS.
+
+#  Methods are a key to dividing responsibilities in programming, especially in large applications.
+
+# You can basically think of methods as functions acting on an Object that take the Object itself into account through its self argument.
+
+#! SELF = keyword represents INSTANCE of OBJ to create ATTRIBUTES and METHODS
+
+
+# ?self kw used signify that this is method not a function
+
+
+#!OOP SYNTAX
+
+# * def __init__(self,param1,param2):
+# *    self.param1 = self.param1
+
+# todo create methods
+# ? def __init__(self,args):
+#! ATTRIBUTES
+#      self.attribute = self.attribute_name
+
+#!EX DOGS
+
+print('\nDog example\n')
 
 
 class Dog(object):
@@ -150,11 +114,17 @@ print(frank.breed)
 
 # 'Huskie'
 
+print('\nEX CLASS OBJECT ATTRIBUTE')
+
 
 class Dogs:
 
-    # Class Object Attribute
+    #! CLASS OBJECT ATTRIBUTE
+    # * Doesn't use SELF kw
+    # ? same for ANY INSTANCE of a CLASS
+
     species = 'mammal'
+    # species is Class Object Attribute
 
     def __init__(self, breed, name, age):
         self.breed = breed
@@ -164,19 +134,27 @@ class Dogs:
     def bark(self):
         print('Woof my name is {} and I love Geoff'.format(self.name))
 
+    def begging(self, number):
+        print('Woof! I am {} and I love you. I want {} treats'.format(
+            self.name, number))
+# * use SELF.NAME to referenece Instance of Class Object
+
 
 colby = Dogs('Lab', 'Colby', 8)
 print(colby.bark())
 
 print(colby.name)
+print(type(colby), '\n')
+
+# can also pasin new information
+
+print(colby.begging(10))
 
 
-# Methods are functions defined inside the body of a class. They are used to perform operations with the attributes of our objects.
-#  Methods are a key concept of the OOP paradigm. They are essential to dividing responsibilities in programming, especially in large applications.
+#!EX Circle class:
 
-# You can basically think of methods as functions acting on an Object that take the Object itself into account through its self argument.
+print('\nEX CIRCLE')
 
-# Let's go through an example of creating a Circle class:
 
 class Circle:
     pi = 3.14
@@ -224,10 +202,14 @@ print('Circumference is: ', c.getCircumference())
 # Circumference is:  12.56
 
 # Great! Notice how we used self. notation to reference attributes of the class within the method calls. Review how the code above works and try creating your own method.
-# Inheritance
 
-# Inheritance is a way to form new classes using classes that have already been defined.
-# The newly formed classes are called DERIVED CLASSES, the classes that we derive from are called base classes.
+print('\nINHERITACE')
+
+#! Inheritance
+
+# Inheritance is a way to form NEW classes or DERIVED CLASSES using previously defined classes BASE CLASSES.
+
+# The newly formed classes are called DERIVED CLASSES, the classes that we derive from are called BASE CLASSES.
 
 # Benefits of inheritance are code reuse and reduction of complexity of a program.
 
@@ -236,64 +218,9 @@ print('Circumference is: ', c.getCircumference())
 # Let's see an example by incorporating our previous work on the Dog class:
 
 
-class Rectangle:
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-
-    def area(self):
-        return self.length * self.width
-
-    def perimeter(self):
-        return 2 * self.length + 2 * self.width
-
-#! By using inheritance, you can reduce the amount of code you write:
-
-# * So what can super() do for you in single inheritance?
-
-
-class Square(Rectangle):
-    def __init__(self, length):
-        super().__init__(length, length)
-
-# ? PY3 SUPER() DEFAULT PARAM: super() == super(Square,self)
-
-
-class Cube(Square):
-    def surface_area(self):
-        face_area = super().area()
-        return face_area * 6
-
-    def volume(self):
-        face_area = super().area()
-        return face_area * self.length
-
-
-print(Square(4).area())
-rectangle = Rectangle(2, 4)
-
-cube = Cube(3)
-print(cube.surface_area())
-print(cube.volume())
-
-
-# A more common practice is to use abstract classes and inheritance.
-
-# An ABSTRACT CLASS is one that never expects to be instantiated.
-
-#  For example, we will never have an Animal object, only Dog and Cat objects, although Dogs and Cats are derived from Animals:
-
-
 class Animal:
-    def __init__(self, name):    # Constructor of the class
-        self.name = name
-# Constructor of the class
-#         self.name = name
-
-# # Abstract method, defined by convention only
-# raise NotImplementedError("Subclass must implement abstract method")
-    def speak(self):
-        print('Hello')
+    def __init__(self):
+        print("Animal created")
 
     def whoAmI(self):
         print("Animal")
@@ -302,23 +229,63 @@ class Animal:
         print("Eating")
 
 
-class Canine(Animal):
-    def __init__(self, name):
-        self.name = name
-        # print("Cainine created")
+class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog created")
 
     def whoAmI(self):
-        print("Canine")
+        print("Dog")
 
     def bark(self):
         print("Woof!")
-#!overrides speak of Animal
+
+
+d = Dog()
+
+# Animal created
+# Dog created
+
+d.whoAmI()
+
+# Dog
+
+d.eat()
+
+# Eating
+
+d.bark()
+
+# Woof!
+
+# In this example, we have two classes: Animal and Dog. The Animal is the base class, the Dog is the derived class.
+
+# The derived class inherits the functionality of the base class.
+
+#     It is shown by the eat() method.
+
+# The derived class modifies existing behavior of the base class.
+
+#     shown by the whoAmI() method.
+
+# Finally, the derived class extends the functionality of the base class, by defining a new bark() method.
+
+
+#!POLYMORPHIS
+
+print('\nPOLYMORPHISM\n')
+# , polymorphism refers to the way in which different object classes can share the same method name, and those methods can be called from the same place even though a variety of different objects might be passed in.
+
+
+class Canine:
+    def __init__(self, name):
+        self.name = name
 
     def speak(self):
         return self.name+' says Woof!'
 
 
-class Cat:
+class Feline:
     def __init__(self, name):
         self.name = name
 
@@ -326,27 +293,12 @@ class Cat:
         return self.name+' says Meow!'
 
 
-c = Canine('')
-
-# Animal created
-# Dog created
-
-c.whoAmI()
-
-
-c.eat()
-
-# Eating
-
-c.bark()
-
-# Woof!
-
 niko = Canine('Niko')
-felix = Cat('Felix')
+felix = Feline('Felix')
 
 print(niko.speak())
 print(felix.speak())
+
 
 # Niko says Woof!
 # Felix says Meow!
@@ -358,11 +310,8 @@ print(felix.speak())
 for pet in [niko, felix]:
     print(pet.speak())
 
-# Niko says Woof!
-# Felix says Meow!
 
 # Another is with functions:
-
 
 def pet_speak(pet):
     print(pet.speak())
@@ -371,16 +320,55 @@ def pet_speak(pet):
 pet_speak(niko)
 pet_speak(felix)
 
-# Niko says Woof!
-# Felix says Meow!
+# In both cases we were able to pass in different object types, and we obtained object-specific results from the same mechanism.
 
+#!ABSTRACT CLASS and INHERITANCE
+# A more common practice is to use abstract classes and inheritance.
+
+# An ABSTRACT CLASS is one that never expects to be instantiated.
+
+#  For example, we will never have an Animal object, only Dog and Cat objects, although Dogs and Cats are derived from Animals:
+
+print('\nEX ABSTRACT CLASS INHERITANCE')
+
+
+class Animals:
+    def __init__(self, name):    # Constructor of the class
+        self.name = name
+
+    def speak(self):              # Abstract method, defined by convention only
+        raise NotImplementedError("Subclass must implement abstract method")
+
+
+class Doggy(Animals):
+
+    def speak(self):
+        return self.name+' says Woof!'
+
+
+class Kitty(Animals):
+
+    def speak(self):
+        return self.name+' says Meow!'
+
+
+fido = Doggy('Fido')
+isis = Kitty('Isis')
+
+print(fido.speak())
+print(isis.speak())
+
+
+#! Real life examples of polymorphism include:
 
 #     opening different file types - different tools are needed to display Word, pdf and Excel files
 #     adding different objects - the + operator performs arithmetic and concatenation
 
-#! Special Methods
 
+#! Special Methods
+print('\nEX Special Methods\n')
 # Finally let's go over special methods. Classes in Python can implement certain operations with special method names. These methods are not actually called directly but by Python specific language syntax. For example let's create a Book class:
+
 
 class Book(object):
     def __init__(self, title, author, pages):
@@ -427,3 +415,93 @@ del book
 # http://www.tutorialspoint.com/python/python_classes_objects.htm
 
 # https://docs.python.org/3/tutorial/classes.html
+
+# ??????=============
+
+print('\nADDITIONAL EX')
+
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * self.length + 2 * self.width
+
+#! By using inheritance, you can reduce the amount of code you write:
+
+# * So what can super() do for you in single inheritance?
+
+
+class Square(Rectangle):
+    def __init__(self, length):
+        super().__init__(length, length)
+
+# ? PY3 SUPER() DEFAULT PARAM: super() == super(Square,self)
+
+
+class Cube(Square):
+    def surface_area(self):
+        face_area = super().area()
+        return face_area * 6
+
+    def volume(self):
+        face_area = super().area()
+        return face_area * self.length
+
+
+print(Square(4).area())
+rectangle = Rectangle(2, 4)
+
+cube = Cube(3)
+print(cube.surface_area())
+print(cube.volume())
+
+
+print('\nEX CAR')
+
+
+class Car(object):
+    """blueprint for car"""
+# ? __INIT__ == INSTANCE
+
+    def __init__(self, model, color, company, speed_limit):
+        self.color = color
+        self.company = company
+        self.speed_limit = speed_limit
+        self.model = model
+
+    def start(self):
+        print('started')
+
+    def stop(self):
+        print('stopped')
+
+    def accellerate(self):
+        print('accelerating')
+
+    def change_gear(self):
+        print('gear changed')
+
+
+maruthi_suzuki = Car("ertiga", "black", "suzuki", 60)
+audi = Car("A6", "red", "audi", 80)
+
+
+def checkin(ex):
+    return sum(i for i in ex)
+    # for i in ex:
+    #     i += i
+    # return i
+
+
+def mult(nums):
+    return eval('*'.join(map(str, nums)))
+
+
+print(mult([1, 2, 3]))
+# 1
