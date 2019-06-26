@@ -117,7 +117,7 @@ print(frank.breed)
 print('\nEX CLASS OBJECT ATTRIBUTE')
 
 
-class Dogs:
+class Dogs():
 
     #! CLASS OBJECT ATTRIBUTE
     # * Doesn't use SELF kw
@@ -156,15 +156,22 @@ print(colby.begging(10))
 print('\nEX CIRCLE')
 
 
-class Circle:
+class Circle():
+    # * pi is Class Obj Attribute
+    #! CLASS OBJECT ATTRIBUTE
     pi = 3.14
 
 # * Circle gets instantiated with a radius (default is 1)
     def __init__(self, radius=1):
         self.radius = radius
-        self.area = radius * radius * Circle.pi
-
+        self.area = radius * radius * self.pi
+# Because pi is Class Object Attribute
+# ? self.area = radius * radius * Circle.pi
+#! CLASS OBJ ATTRIBUTE alt Syntax
+#! self.attribute = Class.Class_Obj_Attribute
+# radius is Attribute declared as Parameter VS. Area defined as Attribute
 #     #! Method for resetting Radius == new_radius
+
     def setRadius(self, new_radius):
         self.radius = new_radius
         self.area = new_radius * new_radius * self.pi
@@ -176,9 +183,11 @@ class Circle:
 
 
 c = Circle()
+c_two = Circle(30)
 
 print('Radius is: ', c.radius)
 print('Area is: ', c.area)
+print('\nChange default value to 30\nRadius of C_two: ', c_two.radius)
 print('Circumference is: ', c.getCircumference())
 
 # Radius is:  1
@@ -205,20 +214,29 @@ print('Circumference is: ', c.getCircumference())
 
 print('\nINHERITACE')
 
-#! Inheritance
+#! INHERITANCE============
 
-# Inheritance is a way to form NEW classes or DERIVED CLASSES using previously defined classes BASE CLASSES.
+# INHERITACE is a way to form new classes DERIVED CLASSES  using previously defined classes BASE CLASSES.
 
-# The newly formed classes are called DERIVED CLASSES, the classes that we derive from are called BASE CLASSES.
+#! DERIVED CLASS = new class formed from previously defined class BASE CLASS (ancestor)
 
-# Benefits of inheritance are code reuse and reduction of complexity of a program.
+# Benefits of inheritance
+# 1. reuse code
+# 2. reduce of complexity of a program.
 
 # The derived classes (descendants) override or extend the functionality of base classes (ancestors).
 
-# Let's see an example by incorporating our previous work on the Dog class:
+#!EX 1 BASE CLASS
+
+print('\n INHERITANCE EX')
+
+# In this example, we have two classes:
+# 1. Animalz is the base class, #2. Dogz is the derived class.
+
+# The derived class inherits the functionality of the base class.
 
 
-class Animal:
+class Animalz():
     def __init__(self):
         print("Animal created")
 
@@ -229,9 +247,9 @@ class Animal:
         print("Eating")
 
 
-class Dog(Animal):
+class Dogz(Animalz):
     def __init__(self):
-        Animal.__init__(self)
+        Animalz.__init__(self)
         print("Dog created")
 
     def whoAmI(self):
@@ -241,43 +259,42 @@ class Dog(Animal):
         print("Woof!")
 
 
-d = Dog()
-
+d = Dogz()
+# *output
 # Animal created
 # Dog created
 
-d.whoAmI()
-
-# Dog
-
-d.eat()
-
-# Eating
-
-d.bark()
-
-# Woof!
-
-# In this example, we have two classes: Animal and Dog. The Animal is the base class, the Dog is the derived class.
-
-# The derived class inherits the functionality of the base class.
-
-#     It is shown by the eat() method.
-
-# The derived class modifies existing behavior of the base class.
+# ? Derived class MODIFIES existing METHODS/BEHAVIOR of the Base class.
 
 #     shown by the whoAmI() method.
 
-# Finally, the derived class extends the functionality of the base class, by defining a new bark() method.
+d.whoAmI()
+# *output
+# Dog
+
+# Derived class INHERITS the FUNCTIONALITY of the Base class.
+
+# It is shown by the eat() method.
+d.eat()
+# *output
+# Eating
+
+# Derived class EXTENDS the FUNCTIONALITY of the Base class, by defining a NEW METHOD bark()
+
+d.bark()
+# *output
+# Woof!
 
 
-#!POLYMORPHIS
+#!POLYMORPHISM================
 
 print('\nPOLYMORPHISM\n')
-# , polymorphism refers to the way in which different object classes can share the same method name, and those methods can be called from the same place even though a variety of different objects might be passed in.
+#! POLYMORPHISM = Way in which DIFFERENT object CLASSES can share the SAME METHOD NAME,
+# #and those methods belong to the object they act on
+# Here we have a Dog class and a Cat class, and each has a .speak() method.
 
 
-class Canine:
+class Canine():
     def __init__(self, name):
         self.name = name
 
@@ -285,7 +302,7 @@ class Canine:
         return self.name+' says Woof!'
 
 
-class Feline:
+class Feline():
     def __init__(self, name):
         self.name = name
 
@@ -294,24 +311,33 @@ class Feline:
 
 
 niko = Canine('Niko')
-felix = Feline('Felix')
-
 print(niko.speak())
+
+# *OUTPUT Niko says Woof!
+
+felix = Feline('Felix')
 print(felix.speak())
 
+# *OUTPUT Felix says Meow!
 
-# Niko says Woof!
-# Felix says Meow!
 
-# Here we have a Dog class and a Cat class, and each has a .speak() method. When called, each object's .speak() method returns a result unique to the object.
+# When called, each object's .speak() method returns a result unique to the object.
 
-# There a few different ways to demonstrate polymorphism. First, with a for loop:
+# ! EX2 Polymorphism
+# polymorphism with a for loop:
+
+print('\nEX polymorphism w/ for loop')
 
 for pet in [niko, felix]:
+    print(type(pet))
     print(pet.speak())
 
+# *Output Canine Feline class from ex 1
 
-# Another is with functions:
+#!EX 3 Polymorphis with functions:
+
+print('\nEX polymorphism w/ functions')
+
 
 def pet_speak(pet):
     print(pet.speak())
@@ -320,23 +346,29 @@ def pet_speak(pet):
 pet_speak(niko)
 pet_speak(felix)
 
-# In both cases we were able to pass in different object types, and we obtained object-specific results from the same mechanism.
+# * In both cases:
+# 1.  Able to pass in DIFFERENT OBJECT types,
+# 2.  AND Obtained OBJECT-SPECIFIC RESULTS from the SAME mechanism.
 
 #!ABSTRACT CLASS and INHERITANCE
-# A more common practice is to use abstract classes and inheritance.
+print('\nEX ABSTRACT CLASS INHERITANCE')
 
-# An ABSTRACT CLASS is one that never expects to be instantiated.
+# A more common practice is to use ABSTRACT CLASSES and inheritance.
+
+#! ABSTRACT CLASS is one that never expects to be instantiated ONLY act as BASE CLASS.
 
 #  For example, we will never have an Animal object, only Dog and Cat objects, although Dogs and Cats are derived from Animals:
 
-print('\nEX ABSTRACT CLASS INHERITANCE')
 
-
-class Animals:
-    def __init__(self, name):    # Constructor of the class
+class Animals():
+    # * Constructor of the class
+    def __init__(self, name):
         self.name = name
 
-    def speak(self):              # Abstract method, defined by convention only
+  # Abstract method, defined by convention only
+# ?raise error
+
+    def speak(self):
         raise NotImplementedError("Subclass must implement abstract method")
 
 
@@ -358,16 +390,23 @@ isis = Kitty('Isis')
 print(fido.speak())
 print(isis.speak())
 
+# *CODE RAISES ERROR
+# my_animal = Animals('Fred')
+# print(my_animal.speak())
 
 #! Real life examples of polymorphism include:
 
-#     opening different file types - different tools are needed to display Word, pdf and Excel files
-#     adding different objects - the + operator performs arithmetic and concatenation
+# ? 1. opening DIFFERENT FILE TYPES - different tools are needed to display Word, pdf and Excel files
+# *2. ADDING DIFFERENT OBJECTS - the + operator performs ARITHMETIC and CONCATENATION
 
 
 #! Special Methods
-print('\nEX Special Methods\n')
-# Finally let's go over special methods. Classes in Python can implement certain operations with special method names. These methods are not actually called directly but by Python specific language syntax. For example let's create a Book class:
+print('\nEX Special Methods----------\n')
+# Finally let's go over special methods.
+#! Classes in Python can implement BUILT-FUNCTIONS with SPECIAL METHOD NAMES.
+# These methods are NOT called directly but by Python specific language syntax.
+
+# ?  For example let's create a Book class:
 
 
 class Book(object):
@@ -388,25 +427,25 @@ class Book(object):
 
 
 book = Book("Python Rocks!", "Jose Portilla", 159)
+# *output: A book is created
 
-# #Special Methods
 print(book)
-# * can use special mehtod len
+# *output: Title: Python Rocks!, author: Jose Portilla, pages: 159
+
 print(len(book))
+# *output: 159
+
 del book
+# *output: A book is destroyed
 
-# A book is created
-# Title: Python Rocks!, author: Jose Portilla, pages: 159
-# 159
-# A book is destroyed
+# ? These SPECIAL METHODS are defined by their use of UNDERSCORES.
 
-# The __init__(), __str__(), __len__() and __del__() methods
+#! The __init__(), __str__(), __len__() and __del__() methods
 
-# These special methods are defined by their use of underscores. They allow us to use Python specific functions on objects created through our class.
+# They allow us to use Python specific functions on objects created through our class.
 
 # ! For more great resources on this topic, check out:
 
-#
 
 # https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/
 
