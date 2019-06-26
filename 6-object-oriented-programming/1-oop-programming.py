@@ -231,7 +231,8 @@ print('\nINHERITACE')
 print('\n INHERITANCE EX')
 
 # In this example, we have two classes:
-# 1. Animalz is the base class, #2. Dogz is the derived class.
+# 1. Animalz is the base class,
+# #2. Dogz is the derived class.
 
 # The derived class inherits the functionality of the base class.
 
@@ -264,27 +265,25 @@ d = Dogz()
 # Animal created
 # Dog created
 
-# ? Derived class MODIFIES existing METHODS/BEHAVIOR of the Base class.
-
 #     shown by the whoAmI() method.
 
 d.whoAmI()
 # *output
 # Dog
 
-# Derived class INHERITS the FUNCTIONALITY of the Base class.
+# ? Derived class MODIFIES existing METHODS/BEHAVIOR of the Base class.
 
 # It is shown by the eat() method.
 d.eat()
 # *output
 # Eating
-
-# Derived class EXTENDS the FUNCTIONALITY of the Base class, by defining a NEW METHOD bark()
+# ? Derived class INHERITS the FUNCTIONALITY of the Base class.
 
 d.bark()
 # *output
 # Woof!
 
+# ? Derived class EXTENDS the FUNCTIONALITY of the Base class, by defining a NEW METHOD bark()
 
 #!POLYMORPHISM================
 
@@ -457,7 +456,7 @@ del book
 
 # ??????=============
 
-print('\nADDITIONAL EX')
+print('\nSUPER()INHERITANE EX')
 
 
 class Rectangle:
@@ -494,7 +493,9 @@ class Cube(Square):
 
 
 print(Square(4).area())
+
 rectangle = Rectangle(2, 4)
+print(rectangle.area())
 
 cube = Cube(3)
 print(cube.surface_area())
