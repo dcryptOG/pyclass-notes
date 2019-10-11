@@ -6,8 +6,8 @@
 # !asdf
 
 
-# ! Methods are essentially functions built into objects.
-# ! METHOD = function which is defined inside a CLASS BODY.
+# ! Methods are essentially FUNCTIONS built into OBJECTS.
+# ! METHOD = FUNTION which is defined inside a CLASS BODY.
 # ? If called as an attribute of an INSTANCE of that class, the INSTANCE OBJECT read as METHODS its FIRST ARGUMENT (which is usually called SELF).
 
 # You'll later see that we can think of methods as having an argument 'self' referring to the object itself.

@@ -4,12 +4,19 @@
 
 # Fill in the Line class methods to accept coordinates as a pair of tuples and return the slope and distance of the line.
 
+# def distance(self):
+#     return "%0.17f" % (((c1[0]-c2[0])**2)+((c1[1]-c2[1])**2))**0.5
+
+# def slope(self):
+#     return "{:0.15f}".format((c2[1]-c1[1])/(c2[0]-c1[0]))
+# *py accurate to 17 decimals only if 0 value before decimal
+
 
 class Line(object):
 
     def __init__(self, c1, c2, *args, **kwargs):
-        self.c1 = [c1, c1]
-        self.c2 = [c2, c2]
+        self.c1 = (c1, c1)
+        self.c2 = (c2, c2)
 
     def distance(self):
         return (((c2[1]-c1[1])**2)+((c2[0]-c1[0])**2))**0.5

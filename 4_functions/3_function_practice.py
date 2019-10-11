@@ -20,15 +20,15 @@ print(even_odds(3, 9))
 test_string = 'Hello you'
 
 
-def str_two(st):
-    words = st.split()
-    if words[0][0].lower() == words[1][0].lower():
-        return True
-    else:
-        return False
+# def str_two(st):
+#     words = st.split()
+#     if words[0][0].lower() == words[1][0].lower():
+#         return True
+#     else:
+#         return False
 
 
-print('What', str_two('fuck Fuck'))
+# print('What', str_two('fuck Fuck'))
 
 
 def animal_crackers(text):
@@ -47,6 +47,10 @@ print(animal_crackers('fuck Fuck'))
 
 # animal_crackers('Crazy Kangaroo')
 
+
+def twentys(x1, x2):
+    nums = [x1, x2]
+    return sum(nums) == 20 or 20 in nums
 # MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. If not, return False
 
 
@@ -73,8 +77,14 @@ print(add(10, 20))
 
 # makes_twenty(2,3)
 
+
+def yodaz(init):
+    words = init.split()
+    return ' '.join(words[::-1])
+
 # LEVEL 1 PROBLEMS
 # OLD MACDONALD: Write a function that capitalizes the first and fourth letters of a name
+
 
 st = 'helloyou'
 
@@ -100,7 +110,6 @@ print(caps(st))
 # sen = 'I am home'
 
 # words = sen.split()
-
 
 # new = words.pop()
 
@@ -143,10 +152,7 @@ print(yoda('I am home'))
 
 
 def almost(n):
-    if abs(n) in range(90, 111) or range(190, 211):
-        return True
-    else:
-        return False
+    return abs(n) in range(90, 111) or abs(n) in range(190, 211)
 
 
 def almost_there(n):
@@ -165,7 +171,7 @@ def almost_there(n):
 # new = list(enumerate(lst))
 
 def adj3(nums):
-    for i in range(0, len(nums)-1):
+    for i in range(len(nums)-1):
         if nums[i] == 3 and nums[i+1] == 3:
             return True
     return False
@@ -175,15 +181,13 @@ def has_33(nums):
     for i in range(0, len(nums)-1):
 
         # nicer looking alternative in commented code
-        # if nums[i] == 3 and nums[i+1] == 3:
-
-        if nums[i:i+2] == [3, 3]:
-            return True
-
-    return False
+        # return nums[i] == 3 and nums[i+1] == 3
+        return nums[i:i+2] == [3, 3]
+# * i+2 because it stops @ but doesn't include i+2
 
 
-print(adj3([3, 1, 2, 3, 3, 4, 5]), 'nice')
+print(adj3([1, 3, 3, 1, 2, 3]), 'nice')
+
 
 #     x = lst.index()
 # i for i in enumerate(lst):
@@ -208,6 +212,10 @@ def extra(str):
 
 
 print(extra('MMMiiissssssiiippppppiii'))
+
+cs = 'mississippi'
+
+print(''.join([c*3 for c in cs]))
 
 # paper_doll('Hello')
 
@@ -326,6 +334,13 @@ def spy007(arr):
 # ?
 
 
+def mi6(arr):
+    for i in range(len(arr)-1):
+        if arr[i] == 0 and arr[i+1] == 0 and arr[i+2] == 7:
+            return True
+    return False
+
+
 def spy_game(nums):
 
     code = [0, 0, 7, 'x']
@@ -337,7 +352,7 @@ def spy_game(nums):
     return len(code) == 1
 
 
-print(spy_game([1, 0, 2, 4, 0, 5, 7]))
+print(spy_game([1, 0, 2, 4, 0, 5, 7]), 'sy')
 #! find indexes of first two zeros
 
 # spy_game([1,2,4,0,0,7,5])
@@ -351,26 +366,28 @@ print(spy_game([1, 0, 2, 4, 0, 5, 7]))
 # count_primes(100) --> 25
 
 
-# def count_primes(num):
-#     primes = [2]
-#     x = 3
-#     if num < 2:  # for the case of num = 0 or 1
-#         return 0
-#     while x <= num:
-#         for y in range(3, x, 2):  # test all odd factors up to x-1
-#             if x % y == 0:
-#                 x += 2
-#                 break
-#         else:
-#             primes.append(x)
-#             x += 2
-#     print(primes)
-#     return len(primes)
+def count_primes(num):
+    primes = [2]
+    x = 3
+    if num < 2:  # for the case of num = 0 or 1
+        return 0
+    while x <= num:
+        for y in range(3, x, 2):  # test all odd factors up to x-1
+            if x % y == 0:
+                x += 2
+                break
+        else:
+            primes.append(x)
+            x += 2
+    print(primes)
+    return len(primes)
 
 #         for y in range(3, x, 2):  # test all odd factors up to x-1
 
 #! faster version
-def count_primes2(num):
+
+
+def primes2(num):
     primes = [2]
     x = 3
     if num < 2:
@@ -395,18 +412,25 @@ upper = 10
 # lower = int(input("Enter lower range: "))
 # upper = int(input("Enter upper range: "))
 
-print("Prime numbers between", lower, "and", upper, "are:")
 
-for num in range(lower, upper + 1):
-    # prime numbers are greater than 1
-    if num > 1:
-        for i in range(2, num):
-            if (num % i) == 0:
+def primes3(num):
+    x = 3
+    primes = [2]
+    if num < 2:
+        return 0
+    while x <= num:
+        for i in primes:
+            if (x % i) == 0:
+                x += 2
                 break
         else:
-            print(num)
+            primes.append(x)
+            x += 2
+    return primes
 # By convention, 0 and 1 are not prime.
 
+
+print(primes3(20))
 # def count_primes(num):
 #     pass
 
@@ -414,18 +438,15 @@ for num in range(lower, upper + 1):
 
 
 # ! CHECK IF NUM PRIME
-
-def check_prime(num):
-    for i in range(2, num):
-        if(num % i) == 0:
-            break
-        else:
-            return "{} is prime.".format(num)
+def is_prime(a):
+    # return all(a % i !=0 for i in range(2, a))
+    return all(a % i for i in range(2, a))
+# * a return of 0 is false so dont need a!=0
 
 
-print(check_prime(9))
+print(is_prime(5), 'is prime')
 
-
+print(11 % 6)
 ################
 
 

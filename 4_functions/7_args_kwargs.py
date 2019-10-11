@@ -161,10 +161,10 @@ def greet2(*names):
         print("Hello", name)
 
 
+print('\ndef greet2(*names):\n\tfor name in names:\n\t\tprint("Hello",name)\n')
 greet2("Monica", "Luke", "Steve", "John")
 
-# Output
-
+# * Output
 # Hello Monica
 # Hello Luke
 # Hello Steve
@@ -175,6 +175,7 @@ greet2("Monica", "Luke", "Steve", "John")
 # use a for loop to retrieve all the arguments back.
 
 # !UDEMY CLASS EXAMPLES
+print('\n')
 
 
 def myfunc_1(a, b):
@@ -190,15 +191,20 @@ def myfunc2(a=0, b=0, c=0, d=0, e=0):
     return sum((a, b, c, d, e))*.05
 
 
-print(myfunc2(40, 60, 20))
+print(myfunc2(40, 60, 20), 'hi')
 
 
 # Obviously this is not a very efficient solution, and that's where *args comes in.
-# *args
+#! *args
 
-# When a function parameter starts with an asterisk, it allows for an arbitrary number of arguments, and the function takes them in as a tuple of values. Rewriting the above function:
+#! When a FUNCTION PARAMETER starts with an a*ASTERISK
 
-def myfunc(*args):  # ! PEP 8 IS *args
+# *1.    Allows for an arbitrary number of arguments
+# *2.    the function takes them in as a TUPLE of values.
+
+# ! PEP 8 IS *args
+
+def myfunc(*args):
     return sum(args)*.05
 
 
@@ -206,9 +212,14 @@ print('\ndef myfunc(*args):\n    return sum(args)*.05', myfunc(12, 12, 1, 2, 5))
 
 # Notice how passing the keyword "args" into the sum() function did the same thing as a tuple of arguments.
 
-# **kwargs
+#! **kwargs
 
-# Similarly, Python offers a way to handle arbitrary numbers of keyworded arguments. Instead of creating a tuple of values, **kwargs builds a dictionary of key/value pairs. For example:
+#! When a FUNCTION PARAMETER starts with a DOUBLE **ASTERISK
+
+#!1    Allows for an arbitrary number of arguments
+
+#  For example:
+print('\n')
 
 
 def func(**kwargs):
@@ -229,7 +240,9 @@ func()
 
 # *args and **kwargs combined
 
-# You can pass *args and **kwargs into the same function, but *args have to appear before **kwargs
+# ? You can pass *args and **kwargs into the same function
+#! but *args MUST be BEFORE **kwargs
+print('\n')
 
 
 def func0(*args, **kwargs):
