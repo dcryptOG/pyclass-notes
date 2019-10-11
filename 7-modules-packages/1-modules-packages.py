@@ -16,6 +16,7 @@
 #! Writing modules
 
 # %%writefile file1.py4
+#!use open()
 
 
 def myfunc(x):
@@ -62,7 +63,7 @@ list1 = myfunc(11)
 # Python's sys module gives you access to command line arguments when calling scripts.
 
 # %%writefile file3.py
-# import sys
+#! import sys
 # import file1
 # num = int(sys.argv[1])
 # print(file1.myfunc(num))
@@ -87,7 +88,7 @@ list1 = myfunc(11)
 
 # If we want to import the math module, we simply import the name of the module:
 
-# # import the library
+#! # import the library
 # import math
 
 
@@ -103,7 +104,7 @@ list1 = myfunc(11)
 
 # We can look for which functions are implemented in each module by using the dir function:
 
-# print(dir(math))
+# !print(dir(math))
 
 # ['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc']
 

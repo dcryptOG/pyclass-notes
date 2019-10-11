@@ -3,7 +3,7 @@
 print('FILES I/O input output')
 # open files
 print('Python has a built-in open function that allows us to open and play with basic file types. First we will need a file though. ')
-print('\n SYNTAX \n r = read mode \n w = write mode \n a = appending mode \n r+ = special read and write mode \n mode w+ = for writing and readin')
+print('\n SYNTAX \n r = read mode \n w = write mode \n a = appending mode \n r+ = special read and write mode \n mode w+ = for writing and readin \n x for creating writing new file')
 #!open() WRITE FILE PYTHON
 #! w can OVERWRITE EXISTING FILE or CREATE NEW
 print('\n file = open("testfile.txt", "w"')
