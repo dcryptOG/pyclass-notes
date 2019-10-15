@@ -14,7 +14,7 @@ print('"%0.2f" % num')
 a = 0.1 + 0.2
 print("%.2f" % a)
 
-print('\n')
+print("\nprint('{:0.2f}'.format(a))")
 print('{:0.2f}'.format(a))
 
 # : introduces the format spec

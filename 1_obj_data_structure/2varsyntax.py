@@ -13,6 +13,7 @@
 
 # ? EX value of a can be changed
 
+import keyword
 a = 5
 print(a + a)
 a = 10
@@ -27,11 +28,11 @@ my_dogs = 2
 print(my_dogs)
 my_dogs = ["Sammy", "Frankie"]
 print(my_dogs)
+print(type(my_dogs))
 
 
 #!  be aware of type() in python to avoid bugs
 
-print(type(my_dogs))
 
 my_income = 100
 tax_rate = 0.1
@@ -39,14 +40,104 @@ my_taxes = my_income * tax_rate
 print(my_taxes)
 
 
-#! All the keywords except True, False and None are in lowercase and they must be written as it is. The list of all the keywords are given below.
-# Keywords in Python programming language False 	class 	finally 	is 	return
-# None 	continue 	for 	lambda 	try
-# True 	def 	from 	nonlocal 	while
-# and 	del 	global 	not 	with
-# as 	elif 	if 	or 	yield
-# assert 	else 	import 	pass
-# break 	except 	in 	raise
+#!KEYWORDS
+
+# * ALL KEYWORDS ARE LOWERCASE... EXCEPT
+# ? True
+# ?  False
+# ? None
+
+
+# >>> import keyword
+print(keyword.kwlist)
+
+# The list of all the keywords are given below.
+
+# while
+# The while loop in Python is used to iterate over a block of code as long as the test expression (condition) is true. Use when we don't know number of times to iterate
+
+# for
+# used to iterate over a sequence (list, tuple, string) or other iterable objects. Iterating over a sequence is called traversal.
+
+# break
+# interrupt the (loop) cycle, if needed
+
+# continue
+# used to interrupt the current cycle, without jumping out of the whole cycle.
+# New cycle will begin.
+
+# if
+# used to determine, which statements are going to be executed.
+
+# elif
+# stands for else if.If the first test evaluates to False,
+# then it continues with the next one
+
+# else
+# is optional. The statement after the else keyword is executed, unless the condition is True
+
+# is
+# tests for object identity
+
+# not
+# negates a boolean value
+
+# and
+# all conditions in a boolean expression must be met
+
+# or
+# at least one condition must be met.
+
+# import
+# import other modules into a Python script
+
+# as
+# if we want to give a module a different alias
+
+# from
+# for importing a specific variable, class or a function from a module
+
+# def
+# used to create a new user defined function
+
+# return
+# exits the function and returns a value
+
+# lambda
+# creates a new anonymous function
+
+# global
+# access variables defined outside functions
+
+# try
+# specifies exception handlers
+
+# except
+# catches the exception and executes codes
+
+# finally
+# is always executed in the end. Used to clean up resources.
+
+# raise
+# create a user defined exception
+
+# del
+# deletes objects
+
+# pass
+# does nothing
+
+# assert
+# used for debugging purposes
+
+# class
+# used to create new user defined objects
+
+# exec
+# executes Python code dynamically
+
+# yield
+# is used with generators
 
 #! Python Identifiers
 
@@ -78,13 +169,16 @@ print(my_taxes)
 
 # Python is a case-sensitive language. This means, Variable and variable are not the same. Always name identifiers that make sense.
 
-# What is Name in Python?
+# ==========================#==========================
 
-# If you have ever read 'The Zen of Python' (type "import this" in Python interpreter), the last line states, Namespaces are one honking great idea -- let's do more of those! So what are these mysterious namespaces? Let us first look at what name is.
+#                           ! What is Name in Python?
 
-#! Name (also called identifier) is simply a name given to objects. Everything in Python is an object. Name is a way to access the underlying object.
+#! Name (also called identifier) is simply a name given to objects.
 
-# For example, when we do the assignment a = 2, here 2 is an object stored in memory and a is the name we associate it with.
+# Everything in Python is an object. Name is a way to access the underlying object.
+
+# NOTE
+#  when we do the assignment a = 2, here 2 is an object stored in memory and a is the name we associate it with.
 #
 # todo                                  Get the address (in RAM) of some Object through the built-in function, id(). Let's check it.
 
@@ -92,23 +186,18 @@ print(my_taxes)
 
 a = 2
 # Output: id(2)= 10919424
-print('id(2) =', id(2))
+print('a=2\nid(2) =', id(2))
 
 # Output: id(a) = 10919424
 print('id(a) =', id(a))
-# Here, both refer to the same object. Let's make things a little more interesting.
+# Here, both refer to the same object.
 
-# Note: You may get different value of id
-
-a = 2
-
-# Output: id(a) = 10919424
-print('id(a) =', id(a))
+# NOTE You may get different value of id
 
 a = a+1
 
 # Output: id(a) = 10919456
-print('id(a) =', id(a))
+print('\na = a+1\nid(a) =', id(a))
 
 # Output: id(3) = 10919456
 print('id(3) =', id(3))
@@ -116,11 +205,10 @@ print('id(3) =', id(3))
 b = 2
 
 # Output: id(2)= 10919424
+print('b=2\nid(b) =', id(b))
 print('id(2) =', id(2))
 
-# What is happening in the above sequence of steps? A diagram will help us explain this.
-
-# Memory diagram of a variable
+# ?What is happening in the above sequence of steps?
 
 # Initially, an object 2 is created and the name a is associated with it, when we do a = a+1, a new object 3 is created and now a associates with this object.
 
@@ -147,7 +235,8 @@ a = printHello()
 a
 
 # Our same name a can refer to a function and we can call the function through it, pretty neat.
-# What is a Namespace in Python?
+
+#! What is a Namespace in Python?
 
 # So now that we understand what names are, we can move on to the concept of namespaces.
 
@@ -166,7 +255,11 @@ a
 # Modules can have various functions and classes. A local namespace is created when a function is called, which has all the names defined in it. Similar, is the case with class. Following diagram may help to clarify this concept.
 
 # Nested Namespaces in Python Programming
-# Python Variable Scope
+
+# ==========================#==========================
+
+
+#! Python Variable Scope
 
 # Although there are various unique namespaces defined, we may not be able to access all of them from every part of the program. The concept of scope comes into play.
 
