@@ -147,7 +147,3 @@
 # ...    continuation line
 
 # https://docs.python.org/3.7/tutorial/appendix.html#tut-interac
-
-#! SOURCE CODE ENCODING
-
-# https://realpython.com/python-encodings-guide/
