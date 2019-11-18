@@ -44,6 +44,13 @@
 
 # Interpreter operates like the Unix shell: when called with standard input connected to atty device, it reads and executes commands interactively
 
+# tty is any device that acts like a teletype
+
+# tty originally mean teletype and pty means psudo-teletype.
+
+# ?tty tele-type
+# pty pseudo-teletype
+
 # When called witha file name arg or with afile as standard input it reads and executes a script from that file
 
 #! command line
@@ -141,9 +148,26 @@
 
 #!2.1                     INTERACTIVE MODE
 
+# When commands are read from a tty, the interpreter is said to be in interactive mode.
+
+# primary prompt >>>
+# continuation lines ...
+
 # interactive mode == commands are read from a tty
 
-# >>>COMMAND
-# ...    continuation line
+#!2.1                     SOURCE CODE ENCODING
 
-# https://docs.python.org/3.7/tutorial/appendix.html#tut-interac
+
+# *utf-8 default source code encoding Py3
+
+# *Unicode Transformation Format. The '8' means it uses 8-bit blocks to represent a character.
+
+# Unix was originally spelt “Unics”. UNICS stands for UNiplexed Information and Computing System
+
+# American Standard Code for Information Interchange
+
+# CV however in ASCII format, all this means is they want 'plain' text with no formatting such as tabs, bold or underscoring - the raw format that any computer can understand. This is usually so they can easily import the file into their own applications without issues. Notepad.exe creates ASCII text, or in MS Word you can save a file as 'text only'
+
+#!NUMBER SYSTEMS
+
+# https://medium.com/coderscorner/number-systems-decimal-binary-octal-and-hexadecimal-5e567e55ab28
