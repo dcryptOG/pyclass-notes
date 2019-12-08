@@ -27,13 +27,14 @@ print(type(5.0))
 
 # Output: (8+3j)
 c = 5 + 3j
-print(c + 3)
+print('\nc=5+3j\nprint(c+3)\n', c + 3)
 
 # Output: True
 print(isinstance(c, complex))
 
 # ? While integers can be of any length,
-# ?Floating point number is accurate only up to 15 decimal places (the 16th place is inaccurate).
+# ?Floating point number is accurate only up to 15 decimal places
+# ?(the 16th place is inaccurate).
 
 # Numbers we deal with everyday are decimal (base 10) number system.
 # But computer programmers (generally embedded programmer) need to work with binary (base 2), hexadecimal (base 16) and octal (base 8) number systems.
@@ -52,13 +53,13 @@ print(isinstance(c, complex))
 #  Here are some examples
 
 # Output: 107
-print(0b1101011)
+print('\nNUMBER PREFIXES\nBinary 0b 0B\nOctal 0o or 0O\nHexadecimal 0x or 0X\n\nprint(0b1101011)\n', 0b1101011)
 
 # Output: 253 (251 + 2)
-print(0xFB + 0b10)
+print('\n0xFB + 0b10\nOutput 253 (251 +2)', 0xFB + 0b10)
 
 # Output: 13
-print(0o15)
+print(f'\n0o15\nOutput{0o15}\n')
 
 # ? When you run the program, the output will be:
 
@@ -92,7 +93,8 @@ print(0o15)
 #     (3+5j)
 
 # When converting from float to integer, the number gets truncated (integer that is closer to zero).
-# Python Decimal
+
+#! Python Decimal
 
 # Python built-in class float performs some calculations that might amaze us. We all know that the sum of 1.1 and 2.2 is 3.3, but Python seems to disagree.
 

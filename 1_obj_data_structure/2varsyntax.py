@@ -51,92 +51,92 @@ print(my_taxes)
 # >>> import keyword
 print(keyword.kwlist)
 
-# The list of all the keywords are given below.
+#! The list of all the keywords are given below.
 
-# while
+# * while
 # The while loop in Python is used to iterate over a block of code as long as the test expression (condition) is true. Use when we don't know number of times to iterate
 
-# for
+# * for
 # used to iterate over a sequence (list, tuple, string) or other iterable objects. Iterating over a sequence is called traversal.
 
-# break
+# * break
 # interrupt the (loop) cycle, if needed
 
-# continue
+# * continue
 # used to interrupt the current cycle, without jumping out of the whole cycle.
 # New cycle will begin.
 
-# if
+# * if
 # used to determine, which statements are going to be executed.
 
-# elif
+# * elif
 # stands for else if.If the first test evaluates to False,
 # then it continues with the next one
 
-# else
+# * else
 # is optional. The statement after the else keyword is executed, unless the condition is True
 
-# is
+# * is
 # tests for object identity
 
-# not
+# * not
 # negates a boolean value
 
-# and
+# * and
 # all conditions in a boolean expression must be met
 
-# or
+# * or
 # at least one condition must be met.
 
-# import
+# * import
 # import other modules into a Python script
 
-# as
+# * as
 # if we want to give a module a different alias
 
-# from
+# * from
 # for importing a specific variable, class or a function from a module
 
-# def
+# * def
 # used to create a new user defined function
 
-# return
+# * return
 # exits the function and returns a value
 
-# lambda
+# * lambda
 # creates a new anonymous function
 
-# global
+# * global
 # access variables defined outside functions
 
-# try
+# * try
 # specifies exception handlers
 
-# except
+# * except
 # catches the exception and executes codes
 
-# finally
+# * finally
 # is always executed in the end. Used to clean up resources.
 
-# raise
+# * raise
 # create a user defined exception
 
-# del
+# * del
 # deletes objects
 
-# pass
+# * pass
 # does nothing
 
-# assert
+# * assert
 # used for debugging purposes
 
-# class
+# * class
 # used to create new user defined objects
 
-# exec
+# * exec
 # executes Python code dynamically
 
-# yield
+# * yield
 # is used with generators
 
 #! Python Identifiers
@@ -175,7 +175,9 @@ print(keyword.kwlist)
 
 #! Name (also called identifier) is simply a name given to objects.
 
-# Everything in Python is an object. Name is a way to access the underlying object.
+# Everything in Python is an object.
+
+#  Name is a way to access the underlying object.
 
 # NOTE
 #  when we do the assignment a = 2, here 2 is an object stored in memory and a is the name we associate it with.

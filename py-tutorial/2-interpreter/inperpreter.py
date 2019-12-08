@@ -72,7 +72,9 @@
 
 #! python [-bBdEhiIOqsSuvVwx?] [-c command | -m module-name | script | -] [args]
 
-# ? when called with standard input connected to a tty device it promts for command and executes them until an EOF (an end-of-file character Control-Z on windows, Control-D Unix)
+# ? when called with standard input connected to a tty device it promts for command and executes them until an EOF (an end-of-file character
+# Control-Z on Windows
+# Control-D Unix
 
 # ? When called with a file name arg or file as standard input, it reads and executes a script from that file
 

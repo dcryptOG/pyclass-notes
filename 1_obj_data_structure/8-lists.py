@@ -101,4 +101,4 @@ print(matrix[0][0])
 #! 5 INTRO LIST COMPREHENSION
 print('\nLIST COMPREHENSION')
 first_col = [row[0] for row in matrix]
-first_col
+print(first_col)
