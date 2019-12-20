@@ -63,23 +63,19 @@ print(type(x))
 
 #! CLASS = kw used to create USER-DEFINED OBJECT types
 
-# From classes we can construct instances.
+# From classes we can construct INSTANCES.
 
-# An instance is a specific object created from a particular class.
-
-#! INSTANCE def__init__ = is a SPECIFIC OBJECT created from a CLASS
+#! INSTANCE (def__init__) = is a SPECIFIC OBJECT created from a particular CLASS
 
 # *special method NOT function
 
-#! METHODS = functions defined IN the BODY of a CLASS.
-# ? METHODS used to perform operations with the ATTRIBUTES of our OBJECTS.
+#! METHODS = functions defined IN the BODY of a CLASS used to perform operations with ATTRIBUTES of our OBJECTS (self kw).
 
 #  Methods are a key to dividing responsibilities in programming, especially in large applications.
 
 # You can basically think of methods as functions acting on an Object that take the Object itself into account through its self argument.
 
 #! SELF = keyword represents INSTANCE of OBJ to create ATTRIBUTES and METHODS
-
 
 # ?self kw used signify that this is method not a function
 
@@ -89,7 +85,7 @@ print(type(x))
 # * def __init__(self,param1,param2):
 # *    self.param1 = self.param1
 
-# todo create methods
+# todo CREATE METHODS
 # ? def __init__(self,args):
 #! ATTRIBUTES
 #      self.attribute = self.attribute_name
@@ -114,10 +110,12 @@ print(frank.breed)
 
 # 'Huskie'
 
+# ==========================#==========================
+
 print('\nEX CLASS OBJECT ATTRIBUTE')
 
 
-class Dogs():
+class Dogs(object):
 
     #! CLASS OBJECT ATTRIBUTE
     # * Doesn't use SELF kw
@@ -137,6 +135,7 @@ class Dogs():
     def begging(self, number):
         print('Woof! I am {} and I love you. I want {} treats'.format(
             self.name, number))
+
 # * use SELF.NAME to referenece Instance of Class Object
 
 

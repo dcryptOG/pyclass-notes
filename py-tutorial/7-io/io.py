@@ -5,9 +5,11 @@
 
 # ? So far, 2 ways of writing values:
 #
-# 1.    Expression Statements
-# 2.    the print() function.
-# 3.    (A third way is using the write() method of file objects; the standard output file can be referenced as sys.stdout.
+# * 1.    Expression Statements
+
+# * 2.    the print() function.
+
+# * 3.    (A third way is using the write() method of file objects; the standard output file can be referenced as sys.stdout.
 #
 
 # Often you’ll want more control over the formatting of your output than simply printing space-separated values.
@@ -401,7 +403,7 @@
 # IF SIZE IS SPECIFIED, at most size bytes are read and returned.
 # IF the end of the file has been reached, f.read() will return an empty string ('').
 
-#NOTE EX
+# NOTE EX
 # >>> f.read()
 # 'This is the entire file.\n'
 # >>> f.read()
@@ -412,7 +414,7 @@
 
 # IF f.readline() returns an empty string, the end of the file has been reached, while a blank line is represented by '\n', a string containing only a single newline.
 
-#NOTE EX
+# NOTE EX
 # >>> f.readline()
 # 'This is the first line of the file.\n'
 # >>> f.readline()
@@ -423,7 +425,7 @@
 # ? For reading lines from a file, you can LOOP over the file object.
 # *This is memory efficient, fast, and leads to simple code:
 
-#NOTE EX
+# NOTE EX
 # >>> for line in f:
 # ...     print(line, end='')
 # ...

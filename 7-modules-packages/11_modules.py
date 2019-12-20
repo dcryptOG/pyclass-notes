@@ -79,9 +79,9 @@ import random
 
 # >>> from math import pi, e
 # >>> pi
-3.141592653589793
+pi = 3.141592653589793
 # >>> e
-2.718281828459045
+e = 2.718281828459045
 
 # Import all names##################
 
@@ -146,7 +146,7 @@ import random
 # This code got executed
 # <module 'my_module' from '.\\my_module.py'>
 
-# The dir() built-in function
+# !The dir() built-in function
 
 # We can use the dir() function to find out names that are defined inside a module.
 
