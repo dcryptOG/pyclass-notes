@@ -1,5 +1,7 @@
 # What are modules in Python?
 
+#!Modules
+
 # Modules refer to a file containing Python statements and definitions.
 
 # A file containing Python code, for e.g.: example.py, is called a module and its module name would be example.
@@ -10,14 +12,18 @@
 
 # Let us create a module. Type the following and save it as example.py.
 
-# # Python Module example
+# ? # Python Module example
 
-# def add(a, b):
-#    """This program adds two
-#    numbers and return the result"""
 
-#    result = a + b
-#    return result
+import random
+
+
+def add(a, b):
+    """This program adds two
+    numbers and return the result"""
+
+    result = a + b
+    return result
 
 # Here, we have defined a function add() inside a module named example. The function takes in two numbers and returns their sum.
 # How to import modules in Python?
@@ -49,7 +55,6 @@
 # import statement example
 # to import standard module math
 
-import random
 
 # import math
 # print("The value of pi is", math.pi)
@@ -76,7 +81,6 @@ import random
 # We imported only the attribute pi from the module.
 
 # In such case we don't use the dot operator. We could have imported multiple attributes as follows.
-
 # >>> from math import pi, e
 # >>> pi
 pi = 3.141592653589793
