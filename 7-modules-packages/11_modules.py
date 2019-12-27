@@ -26,7 +26,8 @@ def add(a, b):
     return result
 
 # Here, we have defined a function add() inside a module named example. The function takes in two numbers and returns their sum.
-# How to import modules in Python?
+
+#! How to import modules in Python?
 
 # We can import the definitions inside a module to another module or the interactive interpreter in Python.
 
@@ -47,12 +48,13 @@ def add(a, b):
 
 # Standard modules can be imported the same way as we import our user-defined modules.
 
-# There are various ways to import modules. They are listed as follows.
-# Python import statement
+# There are various ways to
+# import modules. They are listed as follows.
+#! Python import statement
 
 # We can import a module using import statement and access the definitions inside it using the dot operator as described above. Here is an example.
 
-# import statement example
+# ? import statement example
 # to import standard module math
 
 
@@ -63,31 +65,38 @@ def add(a, b):
 
 # The value of pi is 3.141592653589793
 
-# Import with renaming
+# ? Import with renaming
 
 # We can import a module by renaming it as follows.
 
 # import module by renaming it
-# from math import pi
+
+# import math as m
 # print("The value of pi is", m.pi)
 
 # We have renamed the math module as m. This can save us typing time in some cases.
 
 # Note that the name math is not recognized in our scope. Hence, math.pi is invalid, m.pi is the correct implementation.
-# Python from...import statement
+
+# ? Python from...import statement
 
 # We can import specific names from a module without importing the module as a whole. Here is an example.
+
+# import only pi from math module
+
+# from math import pi
+# print("The value of pi is", pi)
 
 # We imported only the attribute pi from the module.
 
 # In such case we don't use the dot operator. We could have imported multiple attributes as follows.
 # >>> from math import pi, e
 # >>> pi
-pi = 3.141592653589793
+# pi = 3.141592653589793
 # >>> e
-e = 2.718281828459045
+#e = 2.718281828459045
 
-# Import all names##################
+#? Import all names##################
 
 # We can import all names(definitions) from a module using the following construct.
 
@@ -99,7 +108,8 @@ e = 2.718281828459045
 # We imported all the definitions from the math module. This makes all names except those beginnig with an underscore, visible in our scope.
 
 # Importing everything with the asterisk (*) symbol is not a good programming practice. This can lead to duplicate definitions for an identifier. It also hampers the readability of our code.
-# Python Module Search Path
+
+#! Python Module Search Path
 
 # While importing a module, Python looks at several places. Interpreter first looks for a built-in module then (if not found) into a list of directories defined in sys.path. The search is in this order.
 
@@ -118,7 +128,8 @@ e = 2.718281828459045
 # 'C:\\Python33\\lib\\site-packages']
 
 # We can add modify this list to add our own path.
-# Reloading a module
+
+#! Reloading a module
 
 # The Python interpreter imports a module only once during a session. This makes things more efficient. Here is an example to show how this works.
 
@@ -136,17 +147,22 @@ e = 2.718281828459045
 # >>> import my_module
 # >>> import my_module
 
-# We can see that our code got executed only once. This goes to say that our module was imported only once.
+# We can see that our code got executed only once.
+# This goes to say that our module was imported only once.
 
-# Now if our module changed during the course of the program, we would have to reload it.One way to do this is to restart the interpreter. But this does not help much.
+# ? Now if our module changed during the course of the program, we would have to reload it.
 
-# Python provides a neat way of doing this. We can use the reload() function inside the imp module to reload a module. This is how its done.
+# 1. restart the interpreter. But this does not help much.
+
+# 2. reload() function inside the imp module to reload a module.
+
+# This is how its done.
 
 # >>> import imp
 # >>> import my_module
 # This code got executed
 # >>> import my_module
-# >>> imp.reload(my_module)
+# *>>> imp.reload(my_module)
 # This code got executed
 # <module 'my_module' from '.\\my_module.py'>
 

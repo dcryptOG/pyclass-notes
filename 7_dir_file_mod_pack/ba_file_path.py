@@ -2,11 +2,16 @@
 
 from pathlib import Path, PureWindowsPath
 
-# Technically this code will still work on Windows because Python has a hack where it will recognize either kind of slash when you call open() on Windows. But even still, you shouldn’t depend on that. Not all Python libraries will work if you use wrong kind of slash on the wrong operating system — especially if they interface with external programs or libraries.
+# Technically this code will still work on Windows because Python has a hack where it will recognize either kind of slash when you call open() on Windows.
+# But even still, you shouldn’t depend on that.
+#  Not all Python libraries will work if you use wrong kind of slash on the wrong operating system — especially if they interface with external programs or libraries.
 
 # And Python’s support for mixing slash types is a Windows-only hack that doesn’t work in reverse. Using backslashes in code will totally fail on a Mac:
+# todo python for loop to make multiple directories
 
-# data_folder = "source_data\\text_files\\"
+import os
+
+data_folder = "file_examples"
 
 # file_to_open = data_folder + "raw_data.txt"
 
