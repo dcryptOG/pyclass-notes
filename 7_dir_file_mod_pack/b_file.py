@@ -26,24 +26,26 @@ import os
 
 #! How to open a file?
 
-# Python has a built-in function open() to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+# Python has a built-in function open() to open a file.
+# This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
 
-#     >>> f = open("test.txt")    # open file in current directory
-#     >>> f = open("C:/Python33/README.txt")  # specifying full path
+f = open("C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\file_examples\\file_examplestest.txt")
 
-# We can specify the mode while opening a file. In mode, we specify whether we want to read 'r', write 'w' or append 'a' to the file. We also specify if we want to open the file in text mode or binary mode.
 
+# We can specify the mode while opening a file. In mode, we specify whether we want to read 'r',
 # The default is reading in text mode. In this mode, we get strings when reading from the file.
 
-# On the other hand, binary mode returns bytes and this is the mode to be used when dealing with non-text files like image or exe files.
-# Python File Modes Mode 	Description
-# 'r' 	Open a file for reading. (default)
-# 'w' 	Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
-# 'x' 	Open a file for exclusive creation. If the file already exists, the operation fails.
-# 'a' 	Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
-# 't' 	Open in text mode. (default)
-# 'b' 	Open in binary mode.
-# '+' 	Open a file for updating (reading and writing)
+# We also specify if we want to open the file in text mode or binary mode
+#  On the other hand, binary mode returns bytes and this is the mode to be used when dealing with non-text files like image or exe files.
+
+# * Python File Modes Mode 	Description
+# ? 'r' 	Open a file for READING. (default)
+# ? 'w' 	Open a file for WRITING. Creates a new file if it does not exist or truncates the file if it exists.
+# ? 'x' 	Open a file for EXCLUSIVE CREATION. If the file already exists, the operation fails.
+# ? 'a' 	Open for APPENDING at the end of the file without truncating it. Creates a new file if it does not exist.
+# ? 't' 	Open in text mode. (default)
+# ? 'b' 	Open in binary mode.
+# ? '+' 	Open a file for updating (reading and writing)
 
 #     f = open("test.txt")      # equivalent to 'r' or 'rt'
 #     f = open("test.txt",'w')  # write in text mode
@@ -51,7 +53,7 @@ import os
 
 # Unlike other languages, the character 'a' does not imply the number 97 until it is encoded using ASCII (or other equivalent encodings).
 
-# Moreover, the default encoding is platform dependent. In windows, it is 'cp1252' but 'utf-8' in Linux.
+# The default encoding is platform dependent. In windows, it is 'cp1252' but 'utf-8' in Linux.
 
 # So, we must not also rely on the default encoding or else our code will behave differently in different platforms.
 
@@ -73,7 +75,7 @@ import os
 
 # This method is not entirely safe. If an exception occurs when we are performing some operation with the file, the code exits without closing the file.
 
-# A safer way is to use a try...finally block.
+#* A safer way is to use a try...finally block.
 
 #     try:
 #        f = open("test.txt",encoding = 'utf-8')

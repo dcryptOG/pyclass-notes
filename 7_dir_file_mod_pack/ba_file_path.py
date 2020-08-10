@@ -2,7 +2,9 @@
 
 from pathlib import Path, PureWindowsPath
 
-# Technically this code will still work on Windows because Python has a hack where it will recognize either kind of slash when you call open() on Windows.
+# Technically this code will still work on Windows
+#  Python has a hack where it will recognize either kind of slash when you call open() on Windows.
+
 # But even still, you shouldn’t depend on that.
 #  Not all Python libraries will work if you use wrong kind of slash on the wrong operating system — especially if they interface with external programs or libraries.
 
@@ -11,13 +13,21 @@ from pathlib import Path, PureWindowsPath
 
 import os
 
-data_folder = "file_examples"
+data_folder = "file_examples\\"
 
-# file_to_open = data_folder + "raw_data.txt"
+file_to_open = data_folder + "raw_data.txt"
 
-# f = open(file_to_open)
+f = open(file_to_open, 'w')
 
-# print(f.read())
+f.write('Hello World')
+f.write('\nThis is our new text file')
+
+# FILE PATH open("C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\file_examples")
+# can also use file.writelines() METHOD
+
+print(f.read())
+
+f.close()
 
 # For all these reasons and more, writing code with hardcoded path strings is the kind of thing that will make other programmers look at you with great suspicion. In general, you should try to avoid it.
 

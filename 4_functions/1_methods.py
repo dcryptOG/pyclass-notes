@@ -4,7 +4,7 @@
 # *
 # TODO
 # !asdf
-
+100
 
 # ! Methods are essentially FUNCTIONS built into OBJECTS.
 # ! METHOD = FUNTION which is defined inside a CLASS BODY.

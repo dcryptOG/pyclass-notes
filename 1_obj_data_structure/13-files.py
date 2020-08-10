@@ -31,7 +31,7 @@ print(file.readlines)
 file.seek(0)
 file.close
 
-# WITH STATEMENT
+#! WITH STATEMENT
 # NO NEED TO CLOSE
 print('\nWITH STATEMENT')
 with open('testfile.txt', 'r') as my_file:

@@ -18,27 +18,46 @@
 
 # * os module
 
+
+import os
+
 #  which provides us with many useful methods to work with directories (and files as well).
 
 #! Get Current Directory
 
-# We can get the present working directory using the getcwd() method.
-
-# This method returns the current working directory in the form of a string. We can also use the getcwdb() method to get it as bytes object.
-
-import os
+# *get CWD  os.getcwd() method.
 
 os.getcwd()
-#     'C:\\Program Files\\PyScripter'
-os.getcwdb()
-#     b'C:\\Program Files\\PyScripter'
+# ?     'C:\\Program Files\\PyScripter'
+# Returns CWD as a STRING.
 
 # * The EXTRA BACKSLASH implies ESCAPE SEQUENCE.
 
 # The print() function will render this properly.
 
 print(os.getcwd())
-#     C:\Program Files\PyScripter
+
+# ==========================#==========================
+
+
+# *get CWD as BYTES OBJECT
+
+# print(os.getcwdb())
+# ?     b'C:\\Program Files\\PyScripter'
+# todo DeprecationWarning: The Windows bytes API has been deprecated, use Unicode filenames instead
+
+
+# ==========================#==========================
+
+print('Passing an ASCII string')
+print(list(os.walk(r'C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples')))
+
+print('\nPassing a Unicode string')
+print(list(os.walk(u'C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples')))
+# [(u'C:\\example', [], [u'file.txt'])]
+
+# ==========================#==========================
+
 
 #! Changing Directory
 
@@ -66,8 +85,12 @@ print(os.getcwd())
 #! List Directories and Files
 
 # * listdir() method
+# os.listdir()
 
-# ? listdir()  lists all files and sub directories inside a directory
+print('\nos.listdir\n')
+print(os.listdir())
+
+# ? listdir()  lists all FILES and SUB-DIRs inside a DIR
 
 # todo        input path
 # todo       returns a list of sub directories and files in that path.
@@ -76,24 +99,7 @@ print(os.getcwd())
 
 #     >>> print(os.getcwd())
 
-#     C:\Python33
-
-os.listdir()
-#     ['DLLs',
-#     'Doc',
-#     'include',
-#     'Lib',
-#     'libs',
-#     'LICENSE.txt',
-#     'NEWS.txt',
-#     'python.exe',
-#     'pythonw.exe',
-#     'README.txt',
-#     'Scripts',
-#     'tcl',
-#     'Tools']
-
-os.listdir('C:\\Users')
+print(os.listdir('C:\\Users'))
 #     ['$RECYCLE.BIN',
 #     'Movies',
 #     'Music',
@@ -109,41 +115,56 @@ os.listdir('C:\\Users')
 
 # This method takes in the path of the new directory.
 #  If the FULL PATH is NOT specified, the NEW DIR is created in the CWD (current working directory)
+# *need full path
 
-#     >>> os.mkdir('test')
-#     >>> os.listdir()
+os.mkdir('C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples\\test')
+
+print(os.listdir('C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples'))
 #     ['test']
+
 
 # !Renaming a Directory or a File
 
-# The rename() method can rename a directory or a file.
 
-# The first argument is the old name and the new name must be supplies as the second argument.
+# * The rename()
+# ? method can rename a directory or a file.
+# 1st ARG is the OLD NAME and 2nd ARG is the NEW NAME.
 
-#     >>> os.listdir()
-#     ['test']
-#     >>> os.rename('test','new_one')
-#     >>> os.listdir()
-#     ['new_one']
 
-#! Removing Directory or File
+data_folder = "dir_examples\\"
 
-# A file can be removed (deleted) using the remove() method.
+file_to_open = data_folder + "raw_data.txt"
 
-# Similarly, the rmdir() method removes an empty directory.
+f = open(file_to_open, 'w')
+
+f.write('Hello World')
+f.write('\nThis is our new text file')
+
+# FILE PATH open("C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples")
+# can also use file.writelines() METHOD
+
+print(f.read())
+
+f.close()
+
+# * remove() ==  A FILE can be REMOVED (deleted)
 
 #     >>> os.listdir()
 #     ['new_one', 'old.txt']
 #     >>> os.remove('old.txt')
 #     >>> os.listdir()
+
+# *rmdir() method removes an empty directory.
+
+os.rmdir('C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples\\new_one')
+
+print(os.listdir('C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples'))
+print(os.listdir('C:\\Users\\Geoff\\Desktop\\python-class\\pyclass-notes\\7_dir_file_mod_pack\\dir_examples'))
 #     ['new_one']
-#     >>> os.rmdir('new_one')
-#     >>> os.listdir()
-#     []
 
-# However, note that rmdir() method can only remove empty directories.
+# NOTE that rmdir() method can ONLY REMOVE EMPTY DIR.
 
-# In order to remove a non-empty directory we can use the rmtree() method inside the shutil module.
+# *rmtree() == (inside the shutil module removes a NON-EMPTY DIR.
 
 #     >>> os.listdir()
 #     ['test']
