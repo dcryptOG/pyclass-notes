@@ -44,3 +44,7 @@ with open('text.txt', 'a') as f:
     f.write('\nAPPEND')
 with open('text.txt', 'r') as f:
     print(f.read())
+
+#! add notes Method Name Use Explanation
+#!Add notes that for loops for accessing files is most common
+# *this mehtod returns a file obj
