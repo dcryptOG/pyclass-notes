@@ -69,6 +69,18 @@ with open('text.txt', 'a') as f:
     f.write('\nAPPEND')
 with open('text.txt', 'r') as f:
     print(f.read())
+with open('text.txt', 'r') as f:
+    for line in f:
+        print(line)
+# *work with any file
+fname = "squares.txt"
+with open(fname, 'r') as f:
+    f.readlines()
+    f.read()
+    for line in f:
+        pass
+    # do something with each line
+
 
 #!Fastest processing time for reading a file
 
@@ -82,3 +94,20 @@ for aline in file:
 #! add notes Method Name Use Explanation
 #!Add notes that for loops for accessing files is most common
 # *this mehtod returns a file obj
+
+# ?Note that Python pathnames follow the UNIX conventions (Mac OS is a UNIX variant), rather than the Windows file pathnames that use : and \. The Python interpreter will translate to Windows pathnames when running on a Windows machine; you should be able to share your Python program between a Windows machine and a MAC without having to rewrite the file open commands.
+
+# *absolute path begins with a /
+
+#! INFILE OUTFILE EX
+filename = "squares.txt"
+outfile = open(filename, "w")
+for number in range(13):
+    square = number * number
+    outfile.write(str(square) + "\n")
+
+outfile.close()
+
+infile = open(filename, "r")
+print(infile.read()[:10])
+infile.close()
