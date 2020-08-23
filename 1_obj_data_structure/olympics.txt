@@ -1,0 +1,5 @@
+Name,Sex,Age,Team,Event,Medal
+A Dijang,M,24,China,Judo,NameGunnar Nielsen Abby,M,24,Denark,Football,NA
+A Lamusi,M,23,China,Judo,NA
+Edgar Lindenau Aabye,M,34,Denmark/Sweden,Tug-Of-War,Gold
+Christine Jacoba Aaftink,F,31,Netherlands,Speed Skating,NA

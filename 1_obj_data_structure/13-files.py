@@ -25,6 +25,7 @@ file.close()
 print('file.close()')
 
 # * READ FILE
+print('\nREAD FILE')
 # ?Read and return a string of n characters, or the entire file as a string if n is not provided
 
 print('\n file=open("testfile.txt", "r"')
@@ -62,9 +63,11 @@ print('\nWITH STATEMENT')
 with open('testfile.txt', 'r') as my_file:
     contents = my_file.read()
 print(contents)
+print(type(contents))
 # write with with
 with open('text.txt', 'r') as f:
     print(f.read())
+    print(len(f.read()))
 with open('text.txt', 'a') as f:
     f.write('\nAPPEND')
 with open('text.txt', 'r') as f:
@@ -72,6 +75,8 @@ with open('text.txt', 'r') as f:
 with open('text.txt', 'r') as f:
     for line in f:
         print(line)
+        print(line.split()[0])
+        # print first word
 # *work with any file
 fname = "squares.txt"
 with open(fname, 'r') as f:
@@ -83,17 +88,21 @@ with open(fname, 'r') as f:
 
 
 #!Fastest processing time for reading a file
+print('\nFastest')
 
 file = open("fastest.txt", "r")
-
+num_lines = 0
 for aline in file:
     values = aline.split()
     print(values)
+    num_lines += 1
+print(num_lines)
+# count number of lines fast
 
 
 #! add notes Method Name Use Explanation
 #!Add notes that for loops for accessing files is most common
-# *this mehtod returns a file obj
+# *this mehtod returns a FILE OBJ
 
 # ?Note that Python pathnames follow the UNIX conventions (Mac OS is a UNIX variant), rather than the Windows file pathnames that use : and \. The Python interpreter will translate to Windows pathnames when running on a Windows machine; you should be able to share your Python program between a Windows machine and a MAC without having to rewrite the file open commands.
 

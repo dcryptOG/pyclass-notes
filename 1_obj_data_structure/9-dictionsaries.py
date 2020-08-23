@@ -2,6 +2,8 @@
 # #!UNORDERED mappings for storing objectes
 #! MUTABLE
 #! key-value pair access objects
+# Built in mapping dat type
+# *A map is an unorderd associative collection
 
 # DICTIONARY SYNTAX (JSON)
 # {''KEY1':VALUE1','KEY2':''VALUE2}
